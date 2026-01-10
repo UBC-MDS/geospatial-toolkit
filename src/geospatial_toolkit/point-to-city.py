@@ -1,4 +1,4 @@
-# ChatGPT and VSCode GenAI was used to help write the docstring such as latitude/longitude values and examples.
+# ChatGPT and VSCode GenAI was used to help write the docstring.
 
 
 def point_to_city(lat, lon, cities_df):
@@ -18,15 +18,15 @@ def point_to_city(lat, lon, cities_df):
         Longitude of the point in decimal degrees.
     cities_df : pandas.DataFrame
         A DataFrame containing city boundary geometries. The DataFrame
-        must include a column named ``'geometry'`` with Shapely Polygon
-        or MultiPolygon objects, and a column named ``'city_name'`` that
+        must include a column named 'geometry' with Shapely Polygon
+        or MultiPolygon objects, and a column named 'city_name' that
         identifies each city.
     
     Returns
     -------
     str or None
         The name of the city that contains the input point. Returns
-        ``None`` if the point does not fall within any city polygon.
+        'None' if the point does not fall within any city polygon.
     
     Raises
     ------
@@ -38,7 +38,7 @@ def point_to_city(lat, lon, cities_df):
         range [-180, 180].
     KeyError
         If `cities_df` does not contain the required columns
-        ``'geometry'`` and ``'city_name'``.
+        'geometry' and 'city_name'.
     
     Examples
     --------
