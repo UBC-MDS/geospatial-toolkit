@@ -58,15 +58,18 @@ representative at an online or offline event.
 
 ## Enforcement
 
-[//]: # (TODO: You need to choose whom and how to contact them.)
-
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-\[INSERT CONTACT METHOD\].
-All complaints will be reviewed and investigated promptly and fairly.
+reported to the project maintainers via
+**example@student.ubc.ca**.
 
-All community leaders are obligated to respect the privacy and security of the
-reporter of any incident.
+All complaints will be reviewed and investigated promptly and fairly. If the 
+incident involves a member of the project team, that individual will recuse 
+themselves from the review process.
+
+In the event that a conflict cannot be resolved internally, or involves a 
+violation of University policy, the matter will be referred to the 
+**UBC MDS Program Instruction team** or reported via the 
+**UBC Equity and Inclusion Office**.
 
 ## Enforcement Guidelines
 
