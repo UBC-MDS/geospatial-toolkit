@@ -7,15 +7,20 @@ Every little bit helps, and credit will always be given.
 
 You can contribute in many ways, for example:
 
-* [Report bugs](#report-bugs)
-* [Fix Bugs](#fix-bugs)
-* [Implement Features](#implement-features)
-* [Write Documentation](#write-documentation)
-* [Submit Feedback](#submit-feedback)
+- [Contributing](#contributing)
+  - [Example Contributions](#example-contributions)
+    - [Report Bugs](#report-bugs)
+    - [Fix Bugs](#fix-bugs)
+    - [Implement Features](#implement-features)
+    - [Write Documentation](#write-documentation)
+      - [Documentation Style](#documentation-style)
+    - [Submit Feedback](#submit-feedback)
+  - [Get Started!](#get-started)
+    - [Pull Request Guidelines](#pull-request-guidelines)
 
 ### Report Bugs
 
-Report bugs at https://github.com/PAT0216/geospatial_toolkit/issues.
+Report bugs at https://github.com/UBC-MDS/geospatial_toolkit/issues.
 
 **If you are reporting a bug, please follow the template guidelines. The more
 detailed your report, the easier and thus faster we can help you.**
@@ -42,13 +47,23 @@ happy for any support that they can get.
 geospatial-toolkit could always use more documentation, whether as
 part of the official documentation, in docstrings, or even on the web in blog
 posts, articles, and such. Just
-[open an issue](https://github.com/PAT0216/geospatial_toolkit/issues)
+[open an issue](https://github.com/UBC-MDS/geospatial_toolkit/issues)
 to let us know what you will be working on so that we can provide you with guidance.
+
+#### Documentation Style
+
+We use the NumPy docstring format for all functions. Ensure every function includes:
+
+- A clear summary line.
+- Parameters with type hints.
+- Returns with types.
+- Raises for error handling.
+- Examples using doctest format.
 
 ### Submit Feedback
 
 The best way to send feedback is to file an issue at
-https://github.com/PAT0216/geospatial_toolkit/issues. If your feedback fits the format of one of
+https://github.com/UBC-MDS/geospatial_toolkit/issues. If your feedback fits the format of one of
 the issue templates, please use that. Remember that this is a volunteer-driven
 project and everybody has limited time.
 
@@ -57,42 +72,48 @@ project and everybody has limited time.
 Ready to contribute? Here's how to set up geospatial-toolkit for
 local development.
 
-1. Fork the https://github.com/PAT0216/geospatial_toolkit
-   repository on GitHub.
-2. Clone your fork locally (*if you want to work locally*)
+1. Clone the repository from the UBC-MDS organization:
 
     ```shell
-    git clone git@github.com:your_name_here/geospatial_toolkit.git
+    git clone git@github.com:UBC-MDS/geospatial_toolkit.git
     ```
 
-3. [Install hatch](https://hatch.pypa.io/latest/install/).
+2. [Install hatch](https://hatch.pypa.io/latest/install/).
 
-4. Create a branch for local development using the default branch (typically `main`) as a starting point. Use `fix` or `feat` as a prefix for your branch name.
+3. Create a branch for local development using the `dev` branch as a starting point. We follow a `feature/feature-name` or `fix/bug-name` naming convention.
 
     ```shell
-    git checkout main
-    git checkout -b fix-name-of-your-bugfix
+    git checkout dev
+    git pull origin dev
+    git checkout -b feature/name-of-your-feature
     ```
 
     Now you can make your changes locally.
 
-5. When you're done making changes, apply the quality assurance tools and check
-   that your changes pass our test suite. This is all included with tox
+4. When you're done making changes, apply the quality assurance tools and check
+   that your changes pass our test suite using hatch. 
 
     ```shell
     hatch run test:run
     ```
 
-6. Commit your changes and push your branch to GitHub. Please use [semantic
+5. Commit your changes and push your branch to GitHub. Please use [semantic
    commit messages](https://www.conventionalcommits.org/).
 
     ```shell
     git add .
-    git commit -m "fix: summarize your changes"
-    git push -u origin fix-name-of-your-bugfix
+    git commit -m "feat: summarize your changes"
+    git push -u origin feature/name-of-your-feature
     ```
 
-7. Open the link displayed in the message when pushing your new branch in order
+    Examples of semantic commits:
+
+    - `feat: add haversine distance calculation`
+    - `docs: update readme with ecosystem summary`
+    - `fix: correct latitude range validation`
+    - `chore: update pyproject.toml dependencies`
+
+6. Open the link displayed in the message when pushing your new branch in order
    to submit a pull request.
 
 ### Pull Request Guidelines
@@ -104,3 +125,5 @@ Before you submit a pull request, check that it meets these guidelines:
    new functionality into a function with a docstring.
 3. Your pull request will automatically be checked by the full test suite.
    It needs to pass all of them before it can be considered for merging.
+4. Every pull request must be reviewed and approved by at least one other team member before it can be merged into the dev branch.
+5. Link the pull request to its corresponding issue by including "Closes #X" or "Fixes #X" in the PR description. This ensures the project board stays updated.

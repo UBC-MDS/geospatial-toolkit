@@ -1,3 +1,5 @@
+# Note: Google Gemini AI was used to write the docstrings for the haversine_distance function
+
 def haversine_distance(origin, destination, unit='km'):
     """
     Calculate the great-circle distance between two points on Earth 
