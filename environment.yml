@@ -1,0 +1,5 @@
+name: geospatial
+channels:
+  - conda-forge
+dependencies:
+  - python
