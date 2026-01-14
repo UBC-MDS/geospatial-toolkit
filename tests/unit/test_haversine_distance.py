@@ -1,3 +1,10 @@
+"""
+Tests for the haversine_distance function.
+
+Note: Google Gemini AI was used to suggest additional edge cases 
+and validate the structure of these unit tests.
+"""
+
 import pytest
 from geospatial_toolkit.distance import haversine_distance
 
