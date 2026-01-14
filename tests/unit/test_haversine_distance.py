@@ -43,3 +43,29 @@ def test_haversine_invalid_units():
     """
     with pytest.raises(ValueError):
          haversine_distance((0, 0), (1, 1), unit='lightyears')
+
+def test_haversine_output_type():
+    """
+    Test that the function returns the correct data type (float).
+    """
+    location_a = (49.2827, -123.1207)
+    location_b = (45.5017, -73.5673)
+    
+    result = haversine_distance(location_a, location_b)
+    
+    assert isinstance(result, float), f"Expected float but got {type(result)}"
+
+    # Ensure integer result does not raise a TypeError
+    int_result = haversine_distance((49, -123), (45, -73))
+    
+    assert isinstance(int_result, float)
+
+def test_haversine_output_non_negative():
+    """
+    Test that the distance is always a positive number or zero.
+    """
+    location_a = (49.2827, -123.1207)
+    location_b = (45.5017, -73.5673)
+    
+    assert haversine_distance(location_a, location_b) >= 0
+    assert haversine_distance(location_a, location_a) == 0
