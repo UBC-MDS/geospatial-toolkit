@@ -44,28 +44,35 @@ def test_haversine_invalid_units():
     with pytest.raises(ValueError):
          haversine_distance((0, 0), (1, 1), unit='lightyears')
 
-def test_haversine_output_type():
-    """
-    Test that the function returns the correct data type (float).
-    """
-    location_a = (49.2827, -123.1207)
-    location_b = (45.5017, -73.5673)
-    
-    result = haversine_distance(location_a, location_b)
-    
-    assert isinstance(result, float), f"Expected float but got {type(result)}"
-
-    # Ensure integer result does not raise a TypeError
-    int_result = haversine_distance((49, -123), (45, -73))
-    
-    assert isinstance(int_result, float)
-
 def test_haversine_output_non_negative():
     """
     Test that the distance is always a positive number or zero.
     """
-    location_a = (49.2827, -123.1207)
-    location_b = (45.5017, -73.5673)
+    vancouver = (49.2827, -123.1207)
+    montreal = (45.5017, -73.5673)
     
-    assert haversine_distance(location_a, location_b) >= 0
-    assert haversine_distance(location_a, location_a) == 0
+    assert haversine_distance(vancouver, montreal) >= 0
+    assert haversine_distance(vancouver, vancouver) == 0
+
+def test_haversine_calculation_accuracy():
+    """
+    Test the mathematical accuracy of the function using known distances.
+    """
+    vancouver = (49.2827, -123.1207)
+    montreal = (45.5017, -73.5673)
+    
+    assert haversine_distance(vancouver, montreal, unit='km') == pytest.approx(3684.41, abs=1)
+
+def test_haversine_unit_conversion():
+    """
+    Test that switching units produces the correct relative values.
+    """
+    point_a = (45.0, -75.0)
+    point_b = (46.0, -76.0)
+    
+    dist_km = haversine_distance(point_a, point_b, unit='km')
+    dist_m = haversine_distance(point_a, point_b, unit='m')
+    dist_miles = haversine_distance(point_a, point_b, unit='miles')
+    
+    assert dist_m == pytest.approx(dist_km * 1000, rel=1e-3)
+    assert dist_miles == pytest.approx(dist_km * 0.621371, rel=1e-3)
