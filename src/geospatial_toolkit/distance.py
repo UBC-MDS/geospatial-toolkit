@@ -41,7 +41,7 @@ def haversine_distance(origin, destination, unit='km'):
         raise TypeError("Origin and destination must be tuples.")
     
     if len(origin) != 2 or len(destination) != 2:
-        raise TypeError("Origin and destination must have a length 2.")
+        raise ValueError("Origin and destination must have a length 2.")
 
     try:
         lat1, lon1 = map(float, origin)
