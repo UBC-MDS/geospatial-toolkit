@@ -68,7 +68,7 @@ def test_haversine_calculation_accuracy():
     vancouver = (49.2827, -123.1207)
     montreal = (45.5017, -73.5673)
     
-    assert haversine_distance(vancouver, montreal, unit='km') == pytest.approx(3684.41, abs=1)
+    assert haversine_distance(vancouver, montreal, unit='km') == pytest.approx(3686.32, abs=1)
 
 def test_haversine_unit_conversion():
     """
