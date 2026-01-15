@@ -37,11 +37,11 @@ def test_haversine_input_ranges():
     Test that the function raises ValueError for coordinates outside Earth's bounds.
     """
     # Latitude > 90
-    with pytest.raises(ValueError, match="latitude"):
+    with pytest.raises(ValueError, match="Latitude"):
         haversine_distance((91, 0), (0, 0))
     
     # Longitude < -180
-    with pytest.raises(ValueError, match="longitude"):
+    with pytest.raises(ValueError, match="Longitude"):
         haversine_distance((0, -181), (0, 0))
 
 def test_haversine_invalid_units():
