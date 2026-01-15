@@ -1,5 +1,7 @@
 # Note: Google Gemini AI was used to write the docstrings for the haversine_distance function
 
+import math
+
 def haversine_distance(origin, destination, unit='km'):
     """
     Calculate the great-circle distance between two points on Earth 
@@ -35,5 +37,22 @@ def haversine_distance(origin, destination, unit='km'):
     >>> haversine_distance(point_a, point_b)
     3684.41
     """
+    lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
 
-    pass
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    a = math.sin(dlat / 2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    r = 6371.0 
+    distance = c * r
+
+    if unit == 'km':
+        return distance
+    elif unit == 'm':
+        return distance * 1000
+    elif unit == 'miles':
+        return distance * 0.621371
+    else:
+        raise ValueError("unit must be one of {'km', 'm', 'miles'}")
