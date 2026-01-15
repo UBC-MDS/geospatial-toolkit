@@ -13,15 +13,15 @@ def test_haversine_input_types():
     Test that the function raises TypeError for non-tuple or non-numeric inputs.
     """
     # Test empty tuple
-    with pytest.raises(TypeError, match="length 2"):
+    with pytest.raises(ValueError, match="length 2"):
         haversine_distance((), (45.5, -73.5))
 
     # Test tuple with only 1 item
-    with pytest.raises(TypeError, match="length 2"):
+    with pytest.raises(ValueError, match="length 2"):
         haversine_distance((49.2,), (45.5, -73.5))
     
     # Test tuple with more than 2 items
-    with pytest.raises(TypeError, match="length 2"):
+    with pytest.raises(ValueError, match="length 2"):
         haversine_distance((49.2, -123.1, 500), (45.5, -73.5))
 
     # Test non-tuple input
