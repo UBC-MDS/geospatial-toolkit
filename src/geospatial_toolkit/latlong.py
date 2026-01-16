@@ -1,14 +1,14 @@
 # ChatGPT and VSCode GenAI was used to help write the docstring such as latitude/longitude values and examples.
 
-def standardize_latlong(lat_value, lon_value):
+def standardize_latlong(lat, lon):
     """
     Convert various latitude/longitude formats to a standardized decimal degree format.
     
     Parameters
     ----------
-    lat_value : str or float
+    lat : str or float
         Latitude value in various formats.
-    lon_value : str or float
+    lon : str or float
         Longitude value in various formats.
     Supported formats:
         - Decimal degrees (e.g., 34.0522, -118.2437)
