@@ -1,6 +1,7 @@
 import pytest
-from geospatial_toolkit.latlong import standardize_latlong  
+from geospatial_toolkit.latlong import standardize_latlong
 
+# 
 # Test decimal degree inputs (floats and strings)
 
 @pytest.mark.parametrize("lat, lon, expected", [
@@ -13,7 +14,10 @@ def test_standardize_latlong_decimal_degrees(lat, lon, expected):
     """
     Test that decimal degree inputs are returned correctly.
     """
-    assert standardize_latlong(lat, lon) == expected
+    result_lat, result_lon = standardize_latlong(lat, lon)
+
+    assert result_lat == pytest.approx(expected[0], abs=1e-6)
+    assert result_lon == pytest.approx(expected[1], abs=1e-6)
 
 # Test degrees, minutes, seconds (DMS) inputs
 
@@ -72,5 +76,5 @@ def test_standardize_latlong_invalid_format(lat, lon):
     """
     Test that invalid format latitude/longitude raises ValueError.
     """
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="Input format not recognized or invalid"):
         standardize_latlong(lat, lon)
