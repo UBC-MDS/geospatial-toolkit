@@ -81,7 +81,7 @@ def test_non_numeric_lat_lon_raises_typeerror(cities_df):
 
 def test_cities_df_not_dataframe_raises_typeerror():
     """
-    Test that passing a non-DataFrame cities_df raises a TypeError.
+    Test whether passing a non-DataFrame cities_df raises a TypeError.
     """
     with pytest.raises(TypeError):
         point_to_city(49.5, -123.5, cities_df=["not", "a", "dataframe"])
@@ -94,6 +94,10 @@ def test_cities_df_not_dataframe_raises_typeerror():
     (49.5, -181.0),    # lon too low
 ])
 def test_lat_lon_out_of_range_raises_valueerror(lat, lon, cities_df):
+    """
+    Test whether out-of-range latitude/longitude values raise a ValueError.
+    """
     with pytest.raises(ValueError):
         point_to_city(lat, lon, cities_df)
+
 
