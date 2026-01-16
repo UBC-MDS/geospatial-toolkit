@@ -9,12 +9,12 @@ ChatGPT was used to confirm the usecases, viability and potential errors of the 
 def point_to_city(lat, lon, cities_df):
     """
     Determine which city polygon contains the given geographic coordinate.
-    
+
     This function performs a point-in-polygon test to identify the city
     that the latitude/longitude coordinate falls within. It assumes that
     all geometries are provided in geographic coordinates (latitude and
-    longitude) using EPSG:4326. No map projection or distance calculations
-    are being performed.
+    longitude) are using EPSG:4326. 
+    No map projection or distance calculations are being performed.
     
     Parameters
     ----------
