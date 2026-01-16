@@ -5,6 +5,37 @@ from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 
 
+def _identify_ocean(lat, lon):
+    """
+    Identify which ocean a coordinate point is located in using simplified boundaries.
+    
+    Parameters
+    ----------
+    lat : float
+        Latitude in decimal degrees.
+    lon : float
+        Longitude in decimal degrees.
+    
+    Returns
+    -------
+    str
+        Name of the ocean (Pacific, Atlantic, Indian, Arctic, or Southern).
+    """
+    if lat < -60:
+        return "Southern(Antarctic) Ocean"
+    if lat > 66.5:
+        return "Arctic Ocean"
+    if lon < -70:
+        return "Pacific Ocean"
+    if lon < 20:
+        return "Atlantic Ocean"
+    if lon < 100:
+        return "Indian Ocean"
+    # lon >= 100: transition zone between Indian and Pacific
+    if lon < 145 and lat < -10:
+        return "Indian Ocean"
+    return "Pacific Ocean"
+
 
 def get_antipode(location, resolve_names=True):
     """
