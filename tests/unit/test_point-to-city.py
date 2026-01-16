@@ -27,6 +27,22 @@ def cities_df():
 
 
 
+def test_point_inside_vancouver_returns_vancouver(cities_df):
+    lat, lon = 49.5, -123.5
+    assert point_to_city(lat, lon, cities_df) == "Vancouver"
+
+
+def test_point_inside_burnaby_returns_burnaby(cities_df):
+    lat, lon = 49.6, -122.5
+    assert point_to_city(lat, lon, cities_df) == "Burnaby"
+
+
+def test_point_outside_all_polygons_returns_none(cities_df):
+    lat, lon = 48.5, -123.5
+    assert point_to_city(lat, lon, cities_df) is None
+
+
+
 
 
 
