@@ -80,6 +80,9 @@ def test_non_numeric_lat_lon_raises_typeerror(cities_df):
 
 
 def test_cities_df_not_dataframe_raises_typeerror():
+    """
+    Test that passing a non-DataFrame cities_df raises a TypeError.
+    """
     with pytest.raises(TypeError):
         point_to_city(49.5, -123.5, cities_df=["not", "a", "dataframe"])
 
