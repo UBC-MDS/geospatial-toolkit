@@ -64,7 +64,7 @@ def standardize_latlong(lat, lon):
                 degrees, minutes, direction = ddm_pattern.groups()
                 value = float(degrees) + float(minutes) / 60
             else:
-                raise ValueError("Input format not recognized or invalid.")
+                raise ValueError("Input format not recognized or invalid")
             
             if direction in ['S', 'W']:
                 value = -value
