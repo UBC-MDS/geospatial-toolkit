@@ -1,9 +1,15 @@
-# ChatGPT and VSCode GenAI was used to help write the docstring.
+"""
+Updated point-to-city function.
 
+Note: 
+ChatGPT and VSCode GenAI was used to help write the docstring.
+ChatGPT was used to confirm the usecases, viability and potential errors of the function.
+"""
 
 def point_to_city(lat, lon, cities_df):
     """
     Determine which city polygon contains the given geographic coordinate.
+    
     This function performs a point-in-polygon test to identify the city
     that the latitude/longitude coordinate falls within. It assumes that
     all geometries are provided in geographic coordinates (latitude and
