@@ -78,3 +78,19 @@ def test_non_numeric_lat_lon_raises_typeerror(cities_df):
     with pytest.raises(TypeError):
         point_to_city(49.5, "-123.5", cities_df)
 
+
+def test_cities_df_not_dataframe_raises_typeerror():
+    with pytest.raises(TypeError):
+        point_to_city(49.5, -123.5, cities_df=["not", "a", "dataframe"])
+
+
+@pytest.mark.parametrize("lat, lon", [
+    (91.0, -123.5),    # lat too high
+    (-91.0, -123.5),   # lat too low
+    (49.5, 181.0),     # lon too high
+    (49.5, -181.0),    # lon too low
+])
+def test_lat_lon_out_of_range_raises_valueerror(lat, lon, cities_df):
+    with pytest.raises(ValueError):
+        point_to_city(lat, lon, cities_df)
+
