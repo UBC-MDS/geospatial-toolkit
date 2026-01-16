@@ -13,7 +13,7 @@ The toolkit is intended for GIS analysts, data scientists, students, and researc
 
 ## Functions
 
-- **standardize_latlong(lat_value, lon_value):** Converts latitude and longitude values from various common formats (e.g., decimal degrees, degrees minutes seconds) into a standardized decimal degree representation. The function validates coordinate ranges to ensure correctness before further analysis.
+- **standardize_latlong(lat, lon):** Converts latitude and longitude values from various common formats (e.g., decimal degrees, degrees minutes seconds) into a standardized decimal degree representation. The function validates coordinate ranges to ensure correctness before further analysis.
 
 - **haversine_distance(origin, destination, unit='km'):** Calculates the great-circle distance between two geographic points using the haversine formula. Distances can be returned in kilometers, meters, or miles. Calculations are performed directly on latitude/longitude coordinates.
 
