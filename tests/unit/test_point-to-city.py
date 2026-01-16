@@ -1,3 +1,10 @@
+"""
+Tests for the point-to-city function.
+
+Note: ChatGPT was used to suggest additional edge cases, 
+validate the structure and confirm the usecases of these unit tests.
+"""
+
 import pandas as pd
 import pytest
 from shapely.geometry import Polygon
@@ -42,8 +49,32 @@ def test_point_outside_all_polygons_returns_none(cities_df):
     assert point_to_city(lat, lon, cities_df) is None
 
 
+def test_point_on_boundary_returns_none(cities_df):
+    """
+    Point lies exactly on the shared boundary between the two polygons.
+    With shapely `contains()` function, we consider boundary points are NOT included inside,
+    so the expected result will be None for boundary points.
+    """
+    lat, lon = 49.5, -123.0
+    assert point_to_city(lat, lon, cities_df) is None
 
 
+def test_missing_required_columns_raises_keyerror(cities_df):
+    """
+    cities_df must contain both 'geometry' and 'city_name' as columns.
+    """
+    bad_df = cities_df.drop(columns=["city_name"])
+    with pytest.raises(KeyError):
+        point_to_city(49.5, -123.5, bad_df)
 
 
+def test_non_numeric_lat_lon_raises_typeerror(cities_df):
+    """
+    lat/lon must be numeric. Strings should raise TypeError.
+    """
+    with pytest.raises(TypeError):
+        point_to_city("49.5", -123.5, cities_df)
+
+    with pytest.raises(TypeError):
+        point_to_city(49.5, "-123.5", cities_df)
 
