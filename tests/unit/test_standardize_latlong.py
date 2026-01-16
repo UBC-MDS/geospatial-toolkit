@@ -1,7 +1,7 @@
 import pytest
 from geospatial_toolkit.latlong import standardize_latlong
 
-# 
+# Gen AI Gemini was used to verify and improve the test cases. 
 # Test decimal degree inputs (floats and strings)
 
 @pytest.mark.parametrize("lat, lon, expected", [
@@ -19,7 +19,7 @@ def test_standardize_latlong_decimal_degrees(lat, lon, expected):
     assert result_lat == pytest.approx(expected[0], abs=1e-6)
     assert result_lon == pytest.approx(expected[1], abs=1e-6)
 
-# Test degrees, minutes, seconds (DMS) inputs
+# Test degrees, minutes, seconds (DMS) inputs (strings)
 
 @pytest.mark.parametrize("lat, lon, expected", [
     ("34°3'8\"N", "118°14'37\"W", (34.052222, -118.243611)),
@@ -36,7 +36,7 @@ def test_standardize_latlong_dms(lat, lon, expected):
     assert result_lat == pytest.approx(expected[0], abs=1e-6)
     assert result_lon == pytest.approx(expected[1], abs=1e-6)
 
-# Test degrees and decimal minutes (DDM) inputs
+# Test degrees and decimal minutes (DDM) inputs (strings)
 
 @pytest.mark.parametrize("lat, lon, expected", [
     ("34°3.133'N", "118°14.617'W", (34.052217, -118.243617)),
@@ -51,11 +51,13 @@ def test_standardize_latlong_ddm(lat, lon, expected):
     assert result_lat == pytest.approx(expected[0], abs=1e-6)
     assert result_lon == pytest.approx(expected[1], abs=1e-6)
 
-# Test out of range inputs
+# Test out of range inputs (strings and floats)
 
 @pytest.mark.parametrize("lat, lon", [
     (91.0, 0.0),
     (0.0, -181.0),
+    ("91°0'0\"N", "0°0'0\"E"),
+    ("0°0'0\"N", "181°0'0\"W"),
 ])
 def test_standardize_latlong_out_of_range(lat, lon):
     """
