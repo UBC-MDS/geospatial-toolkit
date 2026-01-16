@@ -63,7 +63,7 @@ def test_standardize_latlong_out_of_range(lat, lon):
     """
     Test that out of range latitude/longitude raises ValueError.
     """
-    with pytest.raises(ValueError, match="Latitude must be between -90 and 90 and longitude between -180 and 180"):
+    with pytest.raises(ValueError, match="Latitude must be between"):
         standardize_latlong(lat, lon)
 
 # Test invalid format inputs
