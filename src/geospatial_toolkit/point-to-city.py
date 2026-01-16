@@ -71,7 +71,7 @@ def point_to_city(lat, lon, cities_df):
         raise TypeError("lat and lon must be numeric (int or float)")
 
 
-    # Range validation 
+    # Lat/Lon Range validation 
     if not (-90 <= lat <= 90):
         raise ValueError("lat must be in the range [-90, 90]")
 
@@ -85,6 +85,17 @@ def point_to_city(lat, lon, cities_df):
         raise KeyError("cities_df must contain 'geometry' and 'city_name' columns")
     
 
+    # Point in Polygon Search
+    point = Point(lon, lat)
+
+    for _, row in cities_df.iterrows():
+        geom = row["geometry"]
+
+        # contains() -> False, if point is on boundary
+        if geom is not None and geom.contains(point):
+            return row["city_name"]
+
+    return None
 
 
-    
+
