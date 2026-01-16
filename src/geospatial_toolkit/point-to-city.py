@@ -32,7 +32,8 @@ def point_to_city(lat, lon, cities_df):
     -------
     str or None
         The name of the city that contains the input point. Returns
-        'None' if the point does not fall within any city polygon.
+        'None' if the point does not fall within any city polygon 
+        OR if the point lies exactly on a city boundary. 
     
     Raises
     ------
