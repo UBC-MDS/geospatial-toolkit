@@ -32,8 +32,10 @@ classifiers = [
 ]
 # TODO: add keywords
 keywords = []
-# TODO: add dependencies
-dependencies = []
+# Package dependencies
+dependencies = [
+    "geopy>=2.4.0",  # For geocoding (place names <-> coordinates)
+]
 
 [project.urls]
 Homepage = "https://github.com/PAT0216/geospatial-toolkit"
