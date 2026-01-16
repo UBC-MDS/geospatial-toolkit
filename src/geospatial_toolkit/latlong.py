@@ -1,4 +1,5 @@
 # ChatGPT and VSCode GenAI was used to help write the docstring such as latitude/longitude values and examples.
+import re
 
 def standardize_latlong(lat, lon):
     """
@@ -35,4 +36,45 @@ def standardize_latlong(lat, lon):
     >>> standardize_latlong(34.0522, -118.2437)
     (34.0522, -118.2437)
     """
-    pass
+
+    def parse_coordinate(coord):
+        """
+        Parse a single coordinate (latitude or longitude) from various formats to decimal degrees.
+        """
+        try:
+            return float(coord)
+        except (ValueError, TypeError):
+            pass
+
+        if isinstance(coord, str):
+            dms_pattern = re.match(r"(\d+)°(\d+)'(\d+(?:\.\d+)?)\"?([NSEW])", coord)
+            ddm_pattern = re.match(r"(\d+)°(\d+(?:\.\d+)?)'?([NSEW])", coord)
+
+            if dms_pattern:
+                degrees, minutes, seconds, direction = dms_pattern.groups()
+                value = float(degrees) + float(minutes) / 60 + float(seconds) / 3600
+            elif ddm_pattern:
+                degrees, minutes, direction = ddm_pattern.groups()
+                value = float(degrees) + float(minutes) / 60
+            else:
+                raise ValueError("Input format not recognized or invalid")
+            
+            if direction in ['S', 'W']:
+                value = -value
+            return value
+        
+        raise ValueError("Input format not recognized or invalid.")
+    
+    standard_lat = parse_coordinate(lat)
+    standard_lon = parse_coordinate(lon)
+
+    if not (-90 <= standard_lat <= 90) or not (-180 <= standard_lon <= 180):
+        raise ValueError("Latitude must be between -90 and 90 and longitude between -180 and 180")
+    
+    return standard_lat, standard_lon
+
+       
+
+
+
+    
