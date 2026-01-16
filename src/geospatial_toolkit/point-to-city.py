@@ -6,6 +6,9 @@ ChatGPT and VSCode GenAI was used to help write the docstring.
 ChatGPT was used to confirm the usecases, viability and potential errors of the function.
 """
 
+import pandas as pd
+from shapely.geometry import Point
+
 def point_to_city(lat, lon, cities_df):
     """
     Determine which city polygon contains the given geographic coordinate.
@@ -31,8 +34,8 @@ def point_to_city(lat, lon, cities_df):
     Returns
     -------
     str or None
-        The name of the city that contains the input point. Returns
-        'None' if the point does not fall within any city polygon 
+        The name of the city that contains the input point. 
+        Returns None if the point does not fall within any city polygon 
         OR if the point lies exactly on a city boundary. 
     
     Raises
