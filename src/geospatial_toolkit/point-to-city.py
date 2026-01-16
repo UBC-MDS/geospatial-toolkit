@@ -63,4 +63,28 @@ def point_to_city(lat, lon, cities_df):
         'Vancouver'
     """
 
-    pass 
+    # Type Checks
+    if not isinstance(cities_df, pd.DataFrame):
+        raise TypeError("cities_df must be a pandas.DataFrame")
+
+    if not isinstance(lat, (int, float)) or not isinstance(lon, (int, float)):
+        raise TypeError("lat and lon must be numeric (int or float)")
+
+
+    # Range validation 
+    if not (-90 <= lat <= 90):
+        raise ValueError("lat must be in the range [-90, 90]")
+
+    if not (-180 <= lon <= 180):
+        raise ValueError("lon must be in the range [-180, 180]")
+
+    
+    # Must Have Columns
+    required_cols = {"geometry", "city_name"}
+    if not required_cols.issubset(set(cities_df.columns)):
+        raise KeyError("cities_df must contain 'geometry' and 'city_name' columns")
+    
+
+
+
+    
