@@ -10,7 +10,8 @@ from geospatial_toolkit.distance import haversine_distance
 
 def test_haversine_input_types():
     """
-    Test that the function raises TypeError for non-tuple or non-numeric inputs.
+    TTest that the function raises appropriate exceptions for invalid inputs, 
+    including incorrect tuple length, non-tuple inputs, and non-numeric values.
     """
     # Test empty tuple
     with pytest.raises(ValueError, match="length 2"):
