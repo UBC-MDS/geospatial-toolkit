@@ -46,6 +46,14 @@ def point_to_city(lat, lon, cities_df):
     KeyError
         If `cities_df` does not contain the required columns
         'geometry' and 'city_name'.
+
+    Notes
+    ------
+    - This function uses a topological point in polygon test and does not
+      account for distance, area, or projection related distortions.
+    - If a point lies exactly on a city boundary, this function returns None.
+    - The accuracy of the result depends on the quality and resolution
+      of the input city boundary dataset.
     
     Examples
     --------
