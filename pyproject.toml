@@ -34,7 +34,7 @@ classifiers = [
 keywords = []
 # Package dependencies
 dependencies = [
-    "geopy>=2.4.0",  # For geocoding (place names <-> coordinates)
+    "geopy>=2.4.0",  # For geocoding (place names <-> coordinates eg: Vancouver, Canada -> (49.2827, -123.1207))
 ]
 
 [project.urls]
