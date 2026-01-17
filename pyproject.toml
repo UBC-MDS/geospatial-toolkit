@@ -36,6 +36,7 @@ keywords = []
 dependencies = [
     "geopy>=2.4.0",  # For geocoding (place names <-> coordinates eg: Vancouver, Canada -> (49.2827, -123.1207))
     "shapely>=2.0.1",  # For geometric objects and operations (eg: points, polygons, etc.)
+    "pandas>=2.0.0",    # For dataframe usage in tests/functions
 ]
 
 [project.urls]
