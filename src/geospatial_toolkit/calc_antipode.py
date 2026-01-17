@@ -8,6 +8,7 @@ from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 def _identify_ocean(lat, lon):
     """
     Identify which ocean a coordinate point is located in using simplified boundaries.
+    Boundaries are approximate and intended only as a fallback when reverse geocoding fails.
     
     Parameters
     ----------
