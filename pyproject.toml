@@ -32,14 +32,16 @@ classifiers = [
 ]
 # TODO: add keywords
 keywords = []
-# TODO: add dependencies
-dependencies = []
+# Package dependencies
+dependencies = [
+    "geopy>=2.4.0",  # For geocoding (place names <-> coordinates eg: Vancouver, Canada -> (49.2827, -123.1207))
+]
 
 [project.urls]
-Homepage = "https://github.com/PAT0216/geospatial-toolkit"
-"Source Code" = "https://github.com/PAT0216/geospatial-toolkit"
-"Bug Tracker" = "https://github.com/PAT0216/geospatial-toolkit/issues"
-Documentation = "https://github.com/PAT0216/geospatial-toolkit/blob/main/README.md"
+Homepage = "https://github.com/UBC-MDS/geospatial-toolkit"
+"Source Code" = "https://github.com/UBC-MDS/geospatial-toolkit"
+"Bug Tracker" = "https://github.com/UBC-MDS/geospatial-toolkit/issues"
+Documentation = "https://github.com/UBC-MDS/geospatial-toolkit/blob/main/README.md"
 Download = "https://pypi.org/project/geospatial-toolkit/#files"
 
 [project.optional-dependencies]
