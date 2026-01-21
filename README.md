@@ -50,6 +50,12 @@ To use geospatial-toolkit in your code:
 (34.0522, -118.2436)
 ```
 
+## Developer Guide: Building Documentation
+
+1. Install the package in editable mode: `pip install -e .`
+2. Generate the API reference: `PYTHONPATH=src quartodoc build`
+3. Preview the site locally: `quarto preview`
+
 ## Contributors
 - Athul Sasidharan
 - Prabuddha Tamhane
