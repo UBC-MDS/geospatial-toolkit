@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+
+quartodoc:
+  package: geospatial_toolkit
+  dir: reference        
+  sections:
+    - title: API Reference
+      desc: Detailed documentation for the geospatial functions.
+      contents:
+        - get_antipode
+        - haversine_distance
+        - standardize_latlong
+        - point_to_city
+
+
+website:
+  title: "Geospatial Toolkit" 
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Tutorial"   
+        href: demo.ipynb      
+      - text: "Reference"
+        href: reference/index.qmd
+
+
+format:
+  html:
+    theme: cosmo
+    code-fold: true     
+    toc: true               
