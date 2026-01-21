@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  render: 
+    - "*.qmd"
+    - "*.ipynb"
+    - "reference/*.qmd"
 
 
 quartodoc:
