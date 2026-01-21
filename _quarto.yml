@@ -14,10 +14,10 @@ quartodoc:
     - title: API Reference
       desc: Detailed documentation for the geospatial functions.
       contents:
-        - get_antipode
-        - haversine_distance
-        - standardize_latlong
-        - point_to_city
+        - calc_antipode.get_antipode
+        - distance.haversine_distance
+        - latlong.standardize_latlong
+        - point_to_city.point_to_city
 
 
 website:

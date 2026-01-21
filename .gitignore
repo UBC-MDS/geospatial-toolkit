@@ -248,3 +248,6 @@ _version.py
 /docs/
 /.quarto/
 /_site/
+
+
+objects.json

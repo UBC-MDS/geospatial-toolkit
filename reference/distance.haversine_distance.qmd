@@ -1,0 +1,38 @@
+# distance.haversine_distance { #geospatial_toolkit.distance.haversine_distance }
+
+```python
+distance.haversine_distance(origin, destination, unit='km')
+```
+
+Calculate the great-circle distance between two points on Earth 
+using the haversine formula.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name        | Type           | Description                                                                              | Default    |
+|-------------|----------------|------------------------------------------------------------------------------------------|------------|
+| origin      | tuple of float | A tuple representing the (latitude, longitude) of the starting point in decimal degrees. | _required_ |
+| destination | tuple of float | A tuple representing the (latitude, longitude) of the end point in decimal degrees.      | _required_ |
+| unit        | (km, miles, m) | The unit of distance to return. Default is 'km'.                                         | `'km'`     |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                                                 |
+|--------|--------|-------------------------------------------------------------|
+|        | float  | The distance between the two points in the specified units. |
+
+## Raises {.doc-section .doc-section-raises}
+
+| Name   | Type       | Description                                                                   |
+|--------|------------|-------------------------------------------------------------------------------|
+|        | TypeError  | If origin or destination are not tuples or contains non-numeric values.       |
+|        | ValueError | If latitude is not between -90 and 90, or longitude not between -180 and 180. |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> point_a = (49.2827, -123.1207) # Vancouver
+>>> point_b = (45.5017, -73.5673)  # Montreal
+>>> haversine_distance(point_a, point_b)
+3684.41
+```

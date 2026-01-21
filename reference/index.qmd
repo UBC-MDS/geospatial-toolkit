@@ -1,0 +1,12 @@
+# Function reference {.doc .doc-index}
+
+## API Reference
+
+Detailed documentation for the geospatial functions.
+
+| | |
+| --- | --- |
+| [calc_antipode.get_antipode](calc_antipode.get_antipode.qmd#geospatial_toolkit.calc_antipode.get_antipode) | Calculate the antipode (opposite point on Earth) for a given location and  |
+| [distance.haversine_distance](distance.haversine_distance.qmd#geospatial_toolkit.distance.haversine_distance) | Calculate the great-circle distance between two points on Earth  |
+| [latlong.standardize_latlong](latlong.standardize_latlong.qmd#geospatial_toolkit.latlong.standardize_latlong) | Convert various latitude/longitude formats to a standardized decimal degree format. |
+| [point_to_city.point_to_city](point_to_city.point_to_city.qmd#geospatial_toolkit.point_to_city.point_to_city) | Determine which city polygon contains the given geographic coordinate. |
