@@ -50,7 +50,7 @@ def standardize_latlong(lat, lon):
         """
         try:
             return float(coord)
-        except (ValueError):
+        except (ValueError, TypeError):
             pass
 
         if isinstance(coord, str):
