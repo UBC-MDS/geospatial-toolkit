@@ -104,6 +104,11 @@ class TestGetAntipode:
         with pytest.raises(ValueError):
             get_antipode((0, 181))
 
+    def test_resolve_names_false(self):
+        # Test resolve_names=False returns None for description.
+        coords, desc = get_antipode((10, 20), resolve_names=False)
+        assert coords == (-10, -160)
+        assert desc is None
 
 
 class TestIdentifyOcean:
