@@ -97,3 +97,18 @@ def test_standardize_latlong_mixed_formats(lat, lon, expected):
 
     assert result_lat == pytest.approx(expected[0], abs=1e-6)
     assert result_lon == pytest.approx(expected[1], abs=1e-6)
+
+def test_standardize_latlong_unrecognized_string():
+    """
+    Test that unrecognized string inputs raise ValueError.
+    """
+    with pytest.raises(ValueError, match="Input format not recognized or invalid"):
+        standardize_latlong("wrong", "also wrong")
+
+
+def test_standardize_latlong_non_string_non_float():
+    """
+    Test that non-string, non-float inputs raise ValueError.
+    """
+    with pytest.raises(ValueError, match="Input format not recognized or invalid"):
+        standardize_latlong([34.0], {118.0})
