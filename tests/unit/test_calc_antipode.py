@@ -110,6 +110,14 @@ class TestGetAntipode:
         assert coords == (-10, -160)
         assert desc is None
 
+    def test_reverse_geocode_no_result(self, mock_geolocator):
+        # Test reverse geocode returns None leads to ocean identification.
+        mock_geolocator.reverse.return_value = None
+        coords, desc = get_antipode((45, 45))
+        
+        assert coords == (-45, -135)
+        assert desc == "Pacific Ocean"
+
 
 class TestIdentifyOcean:
     # Unit tests for _identify_ocean() - 5 major oceans.
