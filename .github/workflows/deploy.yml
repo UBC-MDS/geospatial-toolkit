@@ -1,9 +1,10 @@
+# Used the help of Gemini-3-pro to guide through the main setup of the file, and troubleshoot for bugs and errors.
 name: Continuous Deployment
 
 on:
   push:
     branches:
-      - main  # Deployment branch - update if using a different branch
+      - main  # Deployment branch 
 
 jobs:
   test:
@@ -16,7 +17,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"  # Matches minimum version in pyproject.toml
+          python-version: "3.10"  
 
       - name: Install hatch
         run: |
@@ -37,7 +38,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"  # Matches minimum version in pyproject.toml
+          python-version: "3.10"  
 
       - name: Install hatch
         run: |
