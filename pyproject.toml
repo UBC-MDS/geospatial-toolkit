@@ -56,13 +56,8 @@ dev = [
 ]
 
 docs = [
-    "sphinx~=8.0",
-    "myst-parser>=4.0",
-    "pydata-sphinx-theme~=0.16",
-    "sphinx-autobuild>=2024.10.3",
-    "sphinx-autoapi>=3.6.0",
-    "sphinx_design>=0.6.1",
-    "sphinx-copybutton>=0.5.2",
+    "quartodoc>=0.7.0",
+    "griffe>=0.40.0",
 ]
 
 build = [
@@ -170,8 +165,8 @@ features = [
 # hatch run docs:build will build your documentation
 # hatch run docs:serve will serve them 'live' on your computer locally
 [tool.hatch.envs.docs.scripts]
-build = ["sphinx-build {args:-W -b html docs docs/_build}"]
-serve = ["sphinx-autobuild docs --watch src/geospatial_toolkit {args:-b html docs/_build/serve}"]
+build = ["quartodoc build", "quarto render docs"]
+serve = ["quarto preview docs"]
 
 
 
