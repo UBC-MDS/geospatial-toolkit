@@ -39,7 +39,7 @@ Among the four main functions in Geospatial Toolkit, some overlap with existing 
 You can install this package into your preferred Python environment using pip:
 
 ```bash
-pip install geospatial-toolkit
+pip install geospatial_toolkit
 ```
 
 To use geospatial-toolkit in your code:
@@ -97,11 +97,25 @@ To run tests with coverage, run:
 pytest --cov=geospatial_toolkit
 ```
 
-## Developer Guide: Building Documentation
+## Building Documentation
 
-1. Install the package in editable mode: `pip install -e .`
-2. Generate the API reference: `PYTHONPATH=src quartodoc build`
-3. Preview the site locally: `quarto preview`
+Install the package in editable mode:
+
+```bash
+pip install -e .
+```
+
+Generate the API reference:
+
+```bash
+quartodoc build
+```
+
+Preview the site locally:
+
+```
+quarto preview
+```
 
 ## Contributors
 - Athul Sasidharan
