@@ -39,15 +39,62 @@ Among the four main functions in Geospatial Toolkit, some overlap with existing 
 You can install this package into your preferred Python environment using pip:
 
 ```bash
-$ pip install geospatial-toolkit
+pip install geospatial-toolkit
 ```
 
 To use geospatial-toolkit in your code:
 
 ```python
->>> import geospatial-toolkit as gst
->>> gst.standardize_latlong("34°3'8\"N", "118°14'37\"W")
-(34.0522, -118.2436)
+import geospatial_toolkit as gst
+gst.standardize_latlong("34°3'8\"N", "118°14'37\"W")
+```
+## Development Environment
+
+To set up the development environment, navigate to your local folder of choice and follow the instructions below
+
+1. Clone the repository:
+
+Using HTTPS:
+```
+git clone https://github.com/UBC-MDS/geospatial-toolkit.git
+```
+
+Or, using SSH:
+```
+git clone git@github.com:UBC-MDS/geospatial-toolkit.git
+```
+
+Navigate to the project root:
+```
+cd geospatial-toolkit
+```
+
+2. Create project Conda environment:
+```
+conda env create -f environment.yml
+```
+
+3. Activate the Conda environment:
+```
+conda activate geospatial
+```
+
+4. Install the package in editable mode
+```
+pip install -e .
+```
+
+## Running Tests
+
+To run the full test suite, ensure the development environment is activated and the package is installed in editable mode.
+
+In terminal, from the project root directory, run: 
+```
+pytest
+```
+To run tests with coverage, run:
+```
+pytest --cov=geospatial_toolkit
 ```
 
 ## Developer Guide: Building Documentation
