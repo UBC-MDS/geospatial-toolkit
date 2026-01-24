@@ -37,7 +37,7 @@ extensions = [
     "sphinx_design",
     "sphinx_copybutton",
     "sphinx.ext.intersphinx",
-    "sphinx.ext.napoleon", # Support numpy style docstrings
+    "sphinx.ext.napoleon",  # Support numpy style docstrings
     # This allows you to create :::{todo} sections that will not be rendered
     # in the live docs if you want to leave notes for future work in the docs
     "sphinx.ext.todo",
@@ -78,7 +78,7 @@ myst_footnote_transition = False
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
-#--------- setup autoapi defaults for your api docs ---------------
+# --------- setup autoapi defaults for your api docs ---------------
 
 # AutoAPI configuration
 autoapi_type = "python"
