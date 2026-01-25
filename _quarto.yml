@@ -25,9 +25,7 @@ website:
   navbar:
     left:
       - text: "Home"
-        href: index.qmd
-      - text: "Tutorial"   
-        href: demo.ipynb      
+        href: index.qmd    
       - text: "Reference"
         href: reference/index.qmd
 
