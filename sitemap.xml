@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://UBC-MDS.github.io/geospatial-toolkit/reference/point_to_city.point_to_city.html</loc>
+    <lastmod>2026-01-25T18:59:28.701Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/geospatial-toolkit/reference/index.html</loc>
+    <lastmod>2026-01-25T18:59:28.656Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/geospatial-toolkit/reference/calc_antipode.get_antipode.html</loc>
+    <lastmod>2026-01-25T18:59:28.683Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/geospatial-toolkit/index.html</loc>
+    <lastmod>2026-01-25T18:58:58.697Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/geospatial-toolkit/reference/distance.haversine_distance.html</loc>
+    <lastmod>2026-01-25T18:59:28.689Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/geospatial-toolkit/reference/latlong.standardize_latlong.html</loc>
+    <lastmod>2026-01-25T18:59:28.695Z</lastmod>
+  </url>
+</urlset>

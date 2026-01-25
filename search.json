@@ -1,208 +1,5 @@
 [
   {
-    "objectID": "demo.html",
-    "href": "demo.html",
-    "title": "Geospatial Toolkit Tutorial",
-    "section": "",
-    "text": "import geospatial_toolkit as gst\n\n\nStandardize Coordinates\nThe standardize_latlong function …\n\n# add code here\n\n\n\nCalculating Distance\nThe haversine_distance function allows you to calculate the shortest distance between two points on Earth. This is useful for shipping, flight paths, or general spatial analysis.\n\n# Define locations as (latitude, longitude) tuples\nvancouver = (49.2827, -123.1207)\nseattle = (47.6062, -122.3321)\n\n# Calculate distance\ndist = gst.haversine_distance(vancouver, seattle)\n\nprint(f\"The distance between Vancouver and Seattle is {dist:.2f} km.\")\n\nThe distance between Vancouver and Seattle is 195.28 km.\n\n\nThe point_to_city function …\n\n# add code here\n\nThe get_antipode function …\n\n# add code here"
-  },
-  {
-    "objectID": "reference/latlong.standardize_latlong.html",
-    "href": "reference/latlong.standardize_latlong.html",
-    "title": "latlong.standardize_latlong",
-    "section": "",
-    "text": "latlong.standardize_latlong(lat, lon)\nConvert various latitude/longitude formats to a standardized decimal degree format.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlat\nstr or float\nLatitude value in various formats.\nrequired\n\n\nlon\nstr or float\nLongitude value in various formats.\nrequired\n\n\nSupported\n\n- Decimal degrees (e.g., 34.0522, -118.2437) - Degrees, minutes, seconds (e.g., 34�3’8”N, 118�14’37”W) - Degrees and decimal minutes (e.g., 34�3.133’N, 118�14.617’W)\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ntuple\nA tuple of floats containing standardized latitude and longitude in decimal degrees.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf the input format is not recognized or if the coordinates are out of valid geographic ranges (Latitude must be between -90 and 90 and longitude must be between -180 and 180).\n\n\n\n\n\n\n&gt;&gt;&gt; # Decimal Degrees\n&gt;&gt;&gt; standardize_latlong(34.0522, -118.2437)\n(34.0522, -118.2437)\n&gt;&gt;&gt; # Degrees, Minutes, Seconds (DMS)\n&gt;&gt;&gt; standardize_latlong(\"34�3'8\"N\", \"118�14'37\"W\")\n(34.05222222222222, -118.24361111111111)\n&gt;&gt;&gt; # Degrees and Decimal Minutes (DDM)\n&gt;&gt;&gt; standardize_latlong(\"34�3.133'N\", \"118�14.617'W\")\n(34.05221666666667, -118.24361666666667)"
-  },
-  {
-    "objectID": "reference/latlong.standardize_latlong.html#parameters",
-    "href": "reference/latlong.standardize_latlong.html#parameters",
-    "title": "latlong.standardize_latlong",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlat\nstr or float\nLatitude value in various formats.\nrequired\n\n\nlon\nstr or float\nLongitude value in various formats.\nrequired\n\n\nSupported\n\n- Decimal degrees (e.g., 34.0522, -118.2437) - Degrees, minutes, seconds (e.g., 34�3’8”N, 118�14’37”W) - Degrees and decimal minutes (e.g., 34�3.133’N, 118�14.617’W)\nrequired"
-  },
-  {
-    "objectID": "reference/latlong.standardize_latlong.html#returns",
-    "href": "reference/latlong.standardize_latlong.html#returns",
-    "title": "latlong.standardize_latlong",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\ntuple\nA tuple of floats containing standardized latitude and longitude in decimal degrees."
-  },
-  {
-    "objectID": "reference/latlong.standardize_latlong.html#raises",
-    "href": "reference/latlong.standardize_latlong.html#raises",
-    "title": "latlong.standardize_latlong",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf the input format is not recognized or if the coordinates are out of valid geographic ranges (Latitude must be between -90 and 90 and longitude must be between -180 and 180)."
-  },
-  {
-    "objectID": "reference/latlong.standardize_latlong.html#examples",
-    "href": "reference/latlong.standardize_latlong.html#examples",
-    "title": "latlong.standardize_latlong",
-    "section": "",
-    "text": "&gt;&gt;&gt; # Decimal Degrees\n&gt;&gt;&gt; standardize_latlong(34.0522, -118.2437)\n(34.0522, -118.2437)\n&gt;&gt;&gt; # Degrees, Minutes, Seconds (DMS)\n&gt;&gt;&gt; standardize_latlong(\"34�3'8\"N\", \"118�14'37\"W\")\n(34.05222222222222, -118.24361111111111)\n&gt;&gt;&gt; # Degrees and Decimal Minutes (DDM)\n&gt;&gt;&gt; standardize_latlong(\"34�3.133'N\", \"118�14.617'W\")\n(34.05221666666667, -118.24361666666667)"
-  },
-  {
-    "objectID": "reference/distance.haversine_distance.html",
-    "href": "reference/distance.haversine_distance.html",
-    "title": "distance.haversine_distance",
-    "section": "",
-    "text": "distance.haversine_distance(origin, destination, unit='km')\nCalculate the great-circle distance between two points on Earth using the haversine formula.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\norigin\ntuple of float\nA tuple representing the (latitude, longitude) of the starting point in decimal degrees.\nrequired\n\n\ndestination\ntuple of float\nA tuple representing the (latitude, longitude) of the end point in decimal degrees.\nrequired\n\n\nunit\n(km, miles, m)\nThe unit of distance to return. Default is ‘km’.\n'km'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe distance between the two points in the specified units.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nTypeError\nIf origin or destination are not tuples or contains non-numeric values.\n\n\n\nValueError\nIf latitude is not between -90 and 90, or longitude not between -180 and 180.\n\n\n\n\n\n\n&gt;&gt;&gt; point_a = (49.2827, -123.1207) # Vancouver\n&gt;&gt;&gt; point_b = (45.5017, -73.5673)  # Montreal\n&gt;&gt;&gt; haversine_distance(point_a, point_b)\n3684.41"
-  },
-  {
-    "objectID": "reference/distance.haversine_distance.html#parameters",
-    "href": "reference/distance.haversine_distance.html#parameters",
-    "title": "distance.haversine_distance",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\norigin\ntuple of float\nA tuple representing the (latitude, longitude) of the starting point in decimal degrees.\nrequired\n\n\ndestination\ntuple of float\nA tuple representing the (latitude, longitude) of the end point in decimal degrees.\nrequired\n\n\nunit\n(km, miles, m)\nThe unit of distance to return. Default is ‘km’.\n'km'"
-  },
-  {
-    "objectID": "reference/distance.haversine_distance.html#returns",
-    "href": "reference/distance.haversine_distance.html#returns",
-    "title": "distance.haversine_distance",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe distance between the two points in the specified units."
-  },
-  {
-    "objectID": "reference/distance.haversine_distance.html#raises",
-    "href": "reference/distance.haversine_distance.html#raises",
-    "title": "distance.haversine_distance",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nTypeError\nIf origin or destination are not tuples or contains non-numeric values.\n\n\n\nValueError\nIf latitude is not between -90 and 90, or longitude not between -180 and 180."
-  },
-  {
-    "objectID": "reference/distance.haversine_distance.html#examples",
-    "href": "reference/distance.haversine_distance.html#examples",
-    "title": "distance.haversine_distance",
-    "section": "",
-    "text": "&gt;&gt;&gt; point_a = (49.2827, -123.1207) # Vancouver\n&gt;&gt;&gt; point_b = (45.5017, -73.5673)  # Montreal\n&gt;&gt;&gt; haversine_distance(point_a, point_b)\n3684.41"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "Package\n \n\n\nMeta\n\n\n\n\n\n\nGeospatial Toolkit is a lightweight Python package designed to simplify and standardize common geospatial tasks. It provides small, modular utilities for coordinate standardization, distance calculations, and spatial search without requiring heavy GIS dependencies.\nThe toolkit is intended for GIS analysts, data scientists, students, and researchers who need reliable and easy-to-use functions for everyday spatial analysis and prototyping.\n\n\n\n\nstandardize_latlong(lat, lon): Converts latitude and longitude values from various common formats (e.g., decimal degrees, degrees minutes seconds) into a standardized decimal degree representation. The function validates coordinate ranges to ensure correctness before further analysis.\nhaversine_distance(origin, destination, unit=‘km’): Calculates the great-circle distance between two geographic points using the haversine formula. Distances can be returned in kilometers, meters, or miles. Calculations are performed directly on latitude/longitude coordinates.\nget_antipode(location, resolve_names=True): Computes the antipodal point (the opposite location on Earth) for a given input location. The input may be a place name or a coordinate pair. Optionally performs reverse geocoding to return a human readable description of the antipode (e.g., land location or open ocean).\npoint_to_city(lat, lon, cities_df): Determines which city polygon contains a given latitude/longitude coordinate using a point-in-polygon test. The function assumes all geometries are provided in geographic coordinates (EPSG:4326) and does not perform any projection or distance based calculations.\n\n\n\n\nThere are several existing Python packages for geospatial analysis, including:\n\ngeopandas: advanced GIS operations and geodataframes\n\nshapely: geometric operations\n\npyproj: CRS transformations and projections\ngeopy: geocoding and distance calculations\nhaversine: distance calculations using the haversine formula\nastropy: astronomy and geospatial calculations\n\nAmong the four main functions in Geospatial Toolkit, some overlap with existing Python packages while others provide unique functionality. The standardize_latlong function partially overlaps with packages like geopy and astropy. The haversine_distance function has equivalents in the haversine package and geopy.distance. The get_antipode function is unique as it combines antipode calculation with optional reverse geocoding. This functionality not readily available in other packages. Finally, point_to_city partially overlaps with geopandas and shapely point-in-polygon operations, but is simplified.\n\n\n\nYou can install this package into your preferred Python environment using pip:\npip install geospatial_toolkit\nTo use geospatial-toolkit in your code:\nimport geospatial_toolkit as gst\ngst.standardize_latlong(\"34°3'8\\\"N\", \"118°14'37\\\"W\")\n\n\n\nTo set up the development environment, navigate to your local folder of choice and follow the instructions below\n\nClone the repository:\n\nUsing HTTPS:\ngit clone https://github.com/UBC-MDS/geospatial-toolkit.git\nOr, using SSH:\ngit clone git@github.com:UBC-MDS/geospatial-toolkit.git\nNavigate to the project root:\ncd geospatial-toolkit\n\nCreate project Conda environment:\n\nconda env create -f environment.yml\n\nActivate the Conda environment:\n\nconda activate geospatial\n\nInstall the package in editable mode\n\npip install -e .\n\n\n\nTo run the full test suite, ensure the development environment is activated and the package is installed in editable mode.\nIn terminal, from the project root directory, run:\npytest\nTo run tests with coverage, run:\npytest --cov=geospatial_toolkit\n\n\n\nInstall the package in editable mode:\npip install -e .\nGenerate the API reference:\nquartodoc build\nPreview the site locally:\nquarto preview\n\n\n\n\nAthul Sasidharan\nPrabuddha Tamhane\nShrabanti Bala Joya\nShreya Kakachery\n\n\n\n\n\nCopyright © 2026 Athul, Bala, Prabuddha, Shreya.\nFree software distributed under the MIT License.\n\n\n\n\nGen AI tools were used to assist in the creation of this package, including code generation and documentation drafting. All generated content was reviewed and edited by the human authors to ensure accuracy and quality."
-  },
-  {
-    "objectID": "index.html#project-summary",
-    "href": "index.html#project-summary",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "Geospatial Toolkit is a lightweight Python package designed to simplify and standardize common geospatial tasks. It provides small, modular utilities for coordinate standardization, distance calculations, and spatial search without requiring heavy GIS dependencies.\nThe toolkit is intended for GIS analysts, data scientists, students, and researchers who need reliable and easy-to-use functions for everyday spatial analysis and prototyping."
-  },
-  {
-    "objectID": "index.html#functions",
-    "href": "index.html#functions",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "standardize_latlong(lat, lon): Converts latitude and longitude values from various common formats (e.g., decimal degrees, degrees minutes seconds) into a standardized decimal degree representation. The function validates coordinate ranges to ensure correctness before further analysis.\nhaversine_distance(origin, destination, unit=‘km’): Calculates the great-circle distance between two geographic points using the haversine formula. Distances can be returned in kilometers, meters, or miles. Calculations are performed directly on latitude/longitude coordinates.\nget_antipode(location, resolve_names=True): Computes the antipodal point (the opposite location on Earth) for a given input location. The input may be a place name or a coordinate pair. Optionally performs reverse geocoding to return a human readable description of the antipode (e.g., land location or open ocean).\npoint_to_city(lat, lon, cities_df): Determines which city polygon contains a given latitude/longitude coordinate using a point-in-polygon test. The function assumes all geometries are provided in geographic coordinates (EPSG:4326) and does not perform any projection or distance based calculations."
-  },
-  {
-    "objectID": "index.html#place-in-the-python-ecosystem",
-    "href": "index.html#place-in-the-python-ecosystem",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "There are several existing Python packages for geospatial analysis, including:\n\ngeopandas: advanced GIS operations and geodataframes\n\nshapely: geometric operations\n\npyproj: CRS transformations and projections\ngeopy: geocoding and distance calculations\nhaversine: distance calculations using the haversine formula\nastropy: astronomy and geospatial calculations\n\nAmong the four main functions in Geospatial Toolkit, some overlap with existing Python packages while others provide unique functionality. The standardize_latlong function partially overlaps with packages like geopy and astropy. The haversine_distance function has equivalents in the haversine package and geopy.distance. The get_antipode function is unique as it combines antipode calculation with optional reverse geocoding. This functionality not readily available in other packages. Finally, point_to_city partially overlaps with geopandas and shapely point-in-polygon operations, but is simplified."
-  },
-  {
-    "objectID": "index.html#get-started",
-    "href": "index.html#get-started",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "You can install this package into your preferred Python environment using pip:\npip install geospatial_toolkit\nTo use geospatial-toolkit in your code:\nimport geospatial_toolkit as gst\ngst.standardize_latlong(\"34°3'8\\\"N\", \"118°14'37\\\"W\")"
-  },
-  {
-    "objectID": "index.html#development-environment",
-    "href": "index.html#development-environment",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "To set up the development environment, navigate to your local folder of choice and follow the instructions below\n\nClone the repository:\n\nUsing HTTPS:\ngit clone https://github.com/UBC-MDS/geospatial-toolkit.git\nOr, using SSH:\ngit clone git@github.com:UBC-MDS/geospatial-toolkit.git\nNavigate to the project root:\ncd geospatial-toolkit\n\nCreate project Conda environment:\n\nconda env create -f environment.yml\n\nActivate the Conda environment:\n\nconda activate geospatial\n\nInstall the package in editable mode\n\npip install -e ."
-  },
-  {
-    "objectID": "index.html#running-tests",
-    "href": "index.html#running-tests",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "To run the full test suite, ensure the development environment is activated and the package is installed in editable mode.\nIn terminal, from the project root directory, run:\npytest\nTo run tests with coverage, run:\npytest --cov=geospatial_toolkit"
-  },
-  {
-    "objectID": "index.html#building-documentation",
-    "href": "index.html#building-documentation",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "Install the package in editable mode:\npip install -e .\nGenerate the API reference:\nquartodoc build\nPreview the site locally:\nquarto preview"
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "Athul Sasidharan\nPrabuddha Tamhane\nShrabanti Bala Joya\nShreya Kakachery"
-  },
-  {
-    "objectID": "index.html#copyright",
-    "href": "index.html#copyright",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "Copyright © 2026 Athul, Bala, Prabuddha, Shreya.\nFree software distributed under the MIT License."
-  },
-  {
-    "objectID": "index.html#atribution",
-    "href": "index.html#atribution",
-    "title": "Geospatial Toolkit",
-    "section": "",
-    "text": "Gen AI tools were used to assist in the creation of this package, including code generation and documentation drafting. All generated content was reviewed and edited by the human authors to ensure accuracy and quality."
-  },
-  {
-    "objectID": "reference/calc_antipode.get_antipode.html",
-    "href": "reference/calc_antipode.get_antipode.html",
-    "title": "calc_antipode.get_antipode",
-    "section": "",
-    "text": "calc_antipode.get_antipode(location, resolve_names=True)\nCalculate the antipode (opposite point on Earth) for a given location and identify its geographical description.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlocation\nstr or tuple of float\nThe starting location. - If str: A query string for a place name (e.g., “Vancouver, Canada”). - If tuple: Coordinates in (latitude, longitude) format.\nrequired\n\n\nresolve_names\nbool\nWhether to reverse geocode the antipodal coordinates. Default is True.\nTrue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nantipode_coords\ntuple of float\nThe coordinates of the antipode in (latitude, longitude) format.\n\n\nantipode_desc\nstr or None\nHuman-readable description of the antipode location. Returns None if resolve_names is False.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf the location string cannot be geocoded or coordinates are out of range.\n\n\n\nTypeError\nIf location is not a string or tuple of floats.\n\n\n\n\n\n\n&gt;&gt;&gt; coords, desc = get_antipode(\"Madrid, Spain\")\n&gt;&gt;&gt; print(coords)\n(-40.4168, 176.2962)\n&gt;&gt;&gt; coords, desc = get_antipode((49.2827, -123.1207))\n&gt;&gt;&gt; print(desc)\n\"French Southern and Antarctic Lands\""
-  },
-  {
-    "objectID": "reference/calc_antipode.get_antipode.html#parameters",
-    "href": "reference/calc_antipode.get_antipode.html#parameters",
-    "title": "calc_antipode.get_antipode",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlocation\nstr or tuple of float\nThe starting location. - If str: A query string for a place name (e.g., “Vancouver, Canada”). - If tuple: Coordinates in (latitude, longitude) format.\nrequired\n\n\nresolve_names\nbool\nWhether to reverse geocode the antipodal coordinates. Default is True.\nTrue"
-  },
-  {
-    "objectID": "reference/calc_antipode.get_antipode.html#returns",
-    "href": "reference/calc_antipode.get_antipode.html#returns",
-    "title": "calc_antipode.get_antipode",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\nantipode_coords\ntuple of float\nThe coordinates of the antipode in (latitude, longitude) format.\n\n\nantipode_desc\nstr or None\nHuman-readable description of the antipode location. Returns None if resolve_names is False."
-  },
-  {
-    "objectID": "reference/calc_antipode.get_antipode.html#raises",
-    "href": "reference/calc_antipode.get_antipode.html#raises",
-    "title": "calc_antipode.get_antipode",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf the location string cannot be geocoded or coordinates are out of range.\n\n\n\nTypeError\nIf location is not a string or tuple of floats."
-  },
-  {
-    "objectID": "reference/calc_antipode.get_antipode.html#examples",
-    "href": "reference/calc_antipode.get_antipode.html#examples",
-    "title": "calc_antipode.get_antipode",
-    "section": "",
-    "text": "&gt;&gt;&gt; coords, desc = get_antipode(\"Madrid, Spain\")\n&gt;&gt;&gt; print(coords)\n(-40.4168, 176.2962)\n&gt;&gt;&gt; coords, desc = get_antipode((49.2827, -123.1207))\n&gt;&gt;&gt; print(desc)\n\"French Southern and Antarctic Lands\""
-  },
-  {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
-    "section": "",
-    "text": "Detailed documentation for the geospatial functions.\n\n\n\ncalc_antipode.get_antipode\nCalculate the antipode (opposite point on Earth) for a given location and\n\n\ndistance.haversine_distance\nCalculate the great-circle distance between two points on Earth\n\n\nlatlong.standardize_latlong\nConvert various latitude/longitude formats to a standardized decimal degree format.\n\n\npoint_to_city.point_to_city\nDetermine which city polygon contains the given geographic coordinate."
-  },
-  {
-    "objectID": "reference/index.html#api-reference",
-    "href": "reference/index.html#api-reference",
-    "title": "Function reference",
-    "section": "",
-    "text": "Detailed documentation for the geospatial functions.\n\n\n\ncalc_antipode.get_antipode\nCalculate the antipode (opposite point on Earth) for a given location and\n\n\ndistance.haversine_distance\nCalculate the great-circle distance between two points on Earth\n\n\nlatlong.standardize_latlong\nConvert various latitude/longitude formats to a standardized decimal degree format.\n\n\npoint_to_city.point_to_city\nDetermine which city polygon contains the given geographic coordinate."
-  },
-  {
     "objectID": "reference/point_to_city.point_to_city.html",
     "href": "reference/point_to_city.point_to_city.html",
     "title": "point_to_city.point_to_city",
@@ -243,5 +40,201 @@
     "title": "point_to_city.point_to_city",
     "section": "",
     "text": "&gt;&gt;&gt; lat = 49.2827\n&gt;&gt;&gt; lon = -123.1207\n&gt;&gt;&gt; point_to_city(lat, lon, cities_df)\n    'Vancouver'"
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Detailed documentation for the geospatial functions.\n\n\n\ncalc_antipode.get_antipode\nCalculate the antipode (opposite point on Earth) for a given location and\n\n\ndistance.haversine_distance\nCalculate the great-circle distance between two points on Earth\n\n\nlatlong.standardize_latlong\nConvert various latitude/longitude formats to a standardized decimal degree format.\n\n\npoint_to_city.point_to_city\nDetermine which city polygon contains the given geographic coordinate."
+  },
+  {
+    "objectID": "reference/index.html#api-reference",
+    "href": "reference/index.html#api-reference",
+    "title": "Function reference",
+    "section": "",
+    "text": "Detailed documentation for the geospatial functions.\n\n\n\ncalc_antipode.get_antipode\nCalculate the antipode (opposite point on Earth) for a given location and\n\n\ndistance.haversine_distance\nCalculate the great-circle distance between two points on Earth\n\n\nlatlong.standardize_latlong\nConvert various latitude/longitude formats to a standardized decimal degree format.\n\n\npoint_to_city.point_to_city\nDetermine which city polygon contains the given geographic coordinate."
+  },
+  {
+    "objectID": "reference/calc_antipode.get_antipode.html",
+    "href": "reference/calc_antipode.get_antipode.html",
+    "title": "calc_antipode.get_antipode",
+    "section": "",
+    "text": "calc_antipode.get_antipode(location, resolve_names=True)\nCalculate the antipode (opposite point on Earth) for a given location and identify its geographical description.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlocation\nstr or tuple of float\nThe starting location. - If str: A query string for a place name (e.g., “Vancouver, Canada”). - If tuple: Coordinates in (latitude, longitude) format.\nrequired\n\n\nresolve_names\nbool\nWhether to reverse geocode the antipodal coordinates. Default is True.\nTrue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\nantipode_coords\ntuple of float\nThe coordinates of the antipode in (latitude, longitude) format.\n\n\nantipode_desc\nstr or None\nHuman-readable description of the antipode location. Returns None if resolve_names is False.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf the location string cannot be geocoded or coordinates are out of range.\n\n\n\nTypeError\nIf location is not a string or tuple of floats.\n\n\n\n\n\n\n&gt;&gt;&gt; coords, desc = get_antipode(\"Madrid, Spain\")\n&gt;&gt;&gt; print(coords)\n(-40.4168, 176.2962)\n&gt;&gt;&gt; coords, desc = get_antipode((49.2827, -123.1207))\n&gt;&gt;&gt; print(desc)\n\"French Southern and Antarctic Lands\""
+  },
+  {
+    "objectID": "reference/calc_antipode.get_antipode.html#parameters",
+    "href": "reference/calc_antipode.get_antipode.html#parameters",
+    "title": "calc_antipode.get_antipode",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlocation\nstr or tuple of float\nThe starting location. - If str: A query string for a place name (e.g., “Vancouver, Canada”). - If tuple: Coordinates in (latitude, longitude) format.\nrequired\n\n\nresolve_names\nbool\nWhether to reverse geocode the antipodal coordinates. Default is True.\nTrue"
+  },
+  {
+    "objectID": "reference/calc_antipode.get_antipode.html#returns",
+    "href": "reference/calc_antipode.get_antipode.html#returns",
+    "title": "calc_antipode.get_antipode",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\nantipode_coords\ntuple of float\nThe coordinates of the antipode in (latitude, longitude) format.\n\n\nantipode_desc\nstr or None\nHuman-readable description of the antipode location. Returns None if resolve_names is False."
+  },
+  {
+    "objectID": "reference/calc_antipode.get_antipode.html#raises",
+    "href": "reference/calc_antipode.get_antipode.html#raises",
+    "title": "calc_antipode.get_antipode",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf the location string cannot be geocoded or coordinates are out of range.\n\n\n\nTypeError\nIf location is not a string or tuple of floats."
+  },
+  {
+    "objectID": "reference/calc_antipode.get_antipode.html#examples",
+    "href": "reference/calc_antipode.get_antipode.html#examples",
+    "title": "calc_antipode.get_antipode",
+    "section": "",
+    "text": "&gt;&gt;&gt; coords, desc = get_antipode(\"Madrid, Spain\")\n&gt;&gt;&gt; print(coords)\n(-40.4168, 176.2962)\n&gt;&gt;&gt; coords, desc = get_antipode((49.2827, -123.1207))\n&gt;&gt;&gt; print(desc)\n\"French Southern and Antarctic Lands\""
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "Package\n \n\n\nMeta\n\n\n\n\n\n\nGeospatial Toolkit is a lightweight Python package designed to simplify and standardize common geospatial tasks. It provides small, modular utilities for coordinate standardization, distance calculations, and spatial search without requiring heavy GIS dependencies.\nThe toolkit is intended for GIS analysts, data scientists, students, and researchers who need reliable and easy-to-use functions for everyday spatial analysis and prototyping.\n\n\n\n\nstandardize_latlong(lat, lon): Converts latitude and longitude values from various common formats (e.g., decimal degrees, degrees minutes seconds) into a standardized decimal degree representation. The function validates coordinate ranges to ensure correctness before further analysis.\nhaversine_distance(origin, destination, unit=‘km’): Calculates the great-circle distance between two geographic points using the haversine formula. Distances can be returned in kilometers, meters, or miles. Calculations are performed directly on latitude/longitude coordinates.\nget_antipode(location, resolve_names=True): Computes the antipodal point (the opposite location on Earth) for a given input location. The input may be a place name or a coordinate pair. Optionally performs reverse geocoding to return a human readable description of the antipode (e.g., land location or open ocean).\npoint_to_city(lat, lon, cities_df): Determines which city polygon contains a given latitude/longitude coordinate using a point-in-polygon test. The function assumes all geometries are provided in geographic coordinates (EPSG:4326) and does not perform any projection or distance based calculations.\n\n\n\n\nThere are several existing Python packages for geospatial analysis, including:\n\ngeopandas: advanced GIS operations and geodataframes\n\nshapely: geometric operations\n\npyproj: CRS transformations and projections\ngeopy: geocoding and distance calculations\nhaversine: distance calculations using the haversine formula\nastropy: astronomy and geospatial calculations\n\nAmong the four main functions in Geospatial Toolkit, some overlap with existing Python packages while others provide unique functionality. The standardize_latlong function partially overlaps with packages like geopy and astropy. The haversine_distance function has equivalents in the haversine package and geopy.distance. The get_antipode function is unique as it combines antipode calculation with optional reverse geocoding. This functionality not readily available in other packages. Finally, point_to_city partially overlaps with geopandas and shapely point-in-polygon operations, but is simplified.\n\n\n\nYou can install this package into your preferred Python environment using pip:\npip install geospatial_toolkit\nTo use geospatial-toolkit in your code:\nimport geospatial_toolkit as gst\nimport pandas as pd\n\n# Standardize latitude and longitude\ngst.standardize_latlong(\"34°3'8\\\"N\", \"118°14'37\\\"W\")\n\n# Calculate Haversine distance between two points\npoint_a = (49.2827, -123.1207) # Vancouver\npoint_b = (45.5017, -73.5673)  # Montreal\ngst.haversine_distance(point_a, point_b)\n\n# Get antipode of a location\ngst.get_antipode(\"Vancouver, BC\")\n\n# Find which city contains a given point\ngst.point_to_city(49.2827, -123.1207, cities_df=pd.DataFrame(...))\n\n\n\nTo set up the development environment, navigate to your local folder of choice and follow the instructions below\n\nClone the repository:\n\nUsing HTTPS:\ngit clone https://github.com/UBC-MDS/geospatial-toolkit.git\nOr, using SSH:\ngit clone git@github.com:UBC-MDS/geospatial-toolkit.git\nNavigate to the project root:\ncd geospatial-toolkit\n\nCreate project Conda environment:\n\nconda env create -f environment.yml\n\nActivate the Conda environment:\n\nconda activate geospatial\n\nInstall the package in editable mode\n\npip install -e .\n\n(Recommended) Install development dependencies\n\nThis project uses optional dependency groups for development, testing, documentation, and packaging.\nInstall all development-related dependencies with:\npip install -e \".[all]\"\nAlternatively, you can install specific groups:\npip install -e \".[dev]\"\npip install -e \".[tests]\"\npip install -e \".[docs]\"\n\n\n\nTo run the full test suite, ensure the development environment is activated and the package is installed in editable mode with testing dependencies.\nIn terminal, from the project root directory, run:\npytest\nTo run tests with coverage, run:\npytest --cov=geospatial_toolkit\n\n\n\nEnsure the development environment is activated and the package is installed in editable mode with documentation dependencies:\npip install -e \".[docs]\"\nGenerate the API reference:\nquartodoc build\nPreview the site locally:\nquarto preview\n\n\n\n\nAthul Sasidharan\nPrabuddha Tamhane\nShrabanti Bala Joya\nShreya Kakachery\n\n\n\n\n\nCopyright © 2026 Athul, Bala, Prabuddha, Shreya.\nFree software distributed under the MIT License.\n\n\n\n\nGen AI tools were used to assist in the creation of this package, including code generation and documentation drafting. All generated content was reviewed and edited by the human authors to ensure accuracy and quality."
+  },
+  {
+    "objectID": "index.html#project-summary",
+    "href": "index.html#project-summary",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "Geospatial Toolkit is a lightweight Python package designed to simplify and standardize common geospatial tasks. It provides small, modular utilities for coordinate standardization, distance calculations, and spatial search without requiring heavy GIS dependencies.\nThe toolkit is intended for GIS analysts, data scientists, students, and researchers who need reliable and easy-to-use functions for everyday spatial analysis and prototyping."
+  },
+  {
+    "objectID": "index.html#functions",
+    "href": "index.html#functions",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "standardize_latlong(lat, lon): Converts latitude and longitude values from various common formats (e.g., decimal degrees, degrees minutes seconds) into a standardized decimal degree representation. The function validates coordinate ranges to ensure correctness before further analysis.\nhaversine_distance(origin, destination, unit=‘km’): Calculates the great-circle distance between two geographic points using the haversine formula. Distances can be returned in kilometers, meters, or miles. Calculations are performed directly on latitude/longitude coordinates.\nget_antipode(location, resolve_names=True): Computes the antipodal point (the opposite location on Earth) for a given input location. The input may be a place name or a coordinate pair. Optionally performs reverse geocoding to return a human readable description of the antipode (e.g., land location or open ocean).\npoint_to_city(lat, lon, cities_df): Determines which city polygon contains a given latitude/longitude coordinate using a point-in-polygon test. The function assumes all geometries are provided in geographic coordinates (EPSG:4326) and does not perform any projection or distance based calculations."
+  },
+  {
+    "objectID": "index.html#place-in-the-python-ecosystem",
+    "href": "index.html#place-in-the-python-ecosystem",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "There are several existing Python packages for geospatial analysis, including:\n\ngeopandas: advanced GIS operations and geodataframes\n\nshapely: geometric operations\n\npyproj: CRS transformations and projections\ngeopy: geocoding and distance calculations\nhaversine: distance calculations using the haversine formula\nastropy: astronomy and geospatial calculations\n\nAmong the four main functions in Geospatial Toolkit, some overlap with existing Python packages while others provide unique functionality. The standardize_latlong function partially overlaps with packages like geopy and astropy. The haversine_distance function has equivalents in the haversine package and geopy.distance. The get_antipode function is unique as it combines antipode calculation with optional reverse geocoding. This functionality not readily available in other packages. Finally, point_to_city partially overlaps with geopandas and shapely point-in-polygon operations, but is simplified."
+  },
+  {
+    "objectID": "index.html#get-started",
+    "href": "index.html#get-started",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "You can install this package into your preferred Python environment using pip:\npip install geospatial_toolkit\nTo use geospatial-toolkit in your code:\nimport geospatial_toolkit as gst\nimport pandas as pd\n\n# Standardize latitude and longitude\ngst.standardize_latlong(\"34°3'8\\\"N\", \"118°14'37\\\"W\")\n\n# Calculate Haversine distance between two points\npoint_a = (49.2827, -123.1207) # Vancouver\npoint_b = (45.5017, -73.5673)  # Montreal\ngst.haversine_distance(point_a, point_b)\n\n# Get antipode of a location\ngst.get_antipode(\"Vancouver, BC\")\n\n# Find which city contains a given point\ngst.point_to_city(49.2827, -123.1207, cities_df=pd.DataFrame(...))"
+  },
+  {
+    "objectID": "index.html#development-environment",
+    "href": "index.html#development-environment",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "To set up the development environment, navigate to your local folder of choice and follow the instructions below\n\nClone the repository:\n\nUsing HTTPS:\ngit clone https://github.com/UBC-MDS/geospatial-toolkit.git\nOr, using SSH:\ngit clone git@github.com:UBC-MDS/geospatial-toolkit.git\nNavigate to the project root:\ncd geospatial-toolkit\n\nCreate project Conda environment:\n\nconda env create -f environment.yml\n\nActivate the Conda environment:\n\nconda activate geospatial\n\nInstall the package in editable mode\n\npip install -e .\n\n(Recommended) Install development dependencies\n\nThis project uses optional dependency groups for development, testing, documentation, and packaging.\nInstall all development-related dependencies with:\npip install -e \".[all]\"\nAlternatively, you can install specific groups:\npip install -e \".[dev]\"\npip install -e \".[tests]\"\npip install -e \".[docs]\""
+  },
+  {
+    "objectID": "index.html#running-tests",
+    "href": "index.html#running-tests",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "To run the full test suite, ensure the development environment is activated and the package is installed in editable mode with testing dependencies.\nIn terminal, from the project root directory, run:\npytest\nTo run tests with coverage, run:\npytest --cov=geospatial_toolkit"
+  },
+  {
+    "objectID": "index.html#building-documentation",
+    "href": "index.html#building-documentation",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "Ensure the development environment is activated and the package is installed in editable mode with documentation dependencies:\npip install -e \".[docs]\"\nGenerate the API reference:\nquartodoc build\nPreview the site locally:\nquarto preview"
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "Athul Sasidharan\nPrabuddha Tamhane\nShrabanti Bala Joya\nShreya Kakachery"
+  },
+  {
+    "objectID": "index.html#copyright",
+    "href": "index.html#copyright",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "Copyright © 2026 Athul, Bala, Prabuddha, Shreya.\nFree software distributed under the MIT License."
+  },
+  {
+    "objectID": "index.html#atribution",
+    "href": "index.html#atribution",
+    "title": "Geospatial Toolkit",
+    "section": "",
+    "text": "Gen AI tools were used to assist in the creation of this package, including code generation and documentation drafting. All generated content was reviewed and edited by the human authors to ensure accuracy and quality."
+  },
+  {
+    "objectID": "reference/distance.haversine_distance.html",
+    "href": "reference/distance.haversine_distance.html",
+    "title": "distance.haversine_distance",
+    "section": "",
+    "text": "distance.haversine_distance(origin, destination, unit='km')\nCalculate the great-circle distance between two points on Earth using the haversine formula.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\norigin\ntuple of float\nA tuple representing the (latitude, longitude) of the starting point in decimal degrees.\nrequired\n\n\ndestination\ntuple of float\nA tuple representing the (latitude, longitude) of the end point in decimal degrees.\nrequired\n\n\nunit\n(km, miles, m)\nThe unit of distance to return. Default is ‘km’.\n'km'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe distance between the two points in the specified units.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nTypeError\nIf origin or destination are not tuples or contains non-numeric values.\n\n\n\nValueError\nIf latitude is not between -90 and 90, or longitude not between -180 and 180.\n\n\n\n\n\n\n&gt;&gt;&gt; point_a = (49.2827, -123.1207) # Vancouver\n&gt;&gt;&gt; point_b = (45.5017, -73.5673)  # Montreal\n&gt;&gt;&gt; haversine_distance(point_a, point_b)\n3684.41"
+  },
+  {
+    "objectID": "reference/distance.haversine_distance.html#parameters",
+    "href": "reference/distance.haversine_distance.html#parameters",
+    "title": "distance.haversine_distance",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\norigin\ntuple of float\nA tuple representing the (latitude, longitude) of the starting point in decimal degrees.\nrequired\n\n\ndestination\ntuple of float\nA tuple representing the (latitude, longitude) of the end point in decimal degrees.\nrequired\n\n\nunit\n(km, miles, m)\nThe unit of distance to return. Default is ‘km’.\n'km'"
+  },
+  {
+    "objectID": "reference/distance.haversine_distance.html#returns",
+    "href": "reference/distance.haversine_distance.html#returns",
+    "title": "distance.haversine_distance",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe distance between the two points in the specified units."
+  },
+  {
+    "objectID": "reference/distance.haversine_distance.html#raises",
+    "href": "reference/distance.haversine_distance.html#raises",
+    "title": "distance.haversine_distance",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nTypeError\nIf origin or destination are not tuples or contains non-numeric values.\n\n\n\nValueError\nIf latitude is not between -90 and 90, or longitude not between -180 and 180."
+  },
+  {
+    "objectID": "reference/distance.haversine_distance.html#examples",
+    "href": "reference/distance.haversine_distance.html#examples",
+    "title": "distance.haversine_distance",
+    "section": "",
+    "text": "&gt;&gt;&gt; point_a = (49.2827, -123.1207) # Vancouver\n&gt;&gt;&gt; point_b = (45.5017, -73.5673)  # Montreal\n&gt;&gt;&gt; haversine_distance(point_a, point_b)\n3684.41"
+  },
+  {
+    "objectID": "reference/latlong.standardize_latlong.html",
+    "href": "reference/latlong.standardize_latlong.html",
+    "title": "latlong.standardize_latlong",
+    "section": "",
+    "text": "latlong.standardize_latlong(lat, lon)\nConvert various latitude/longitude formats to a standardized decimal degree format.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nlat\nstr or float\nLatitude value in various formats. Supported formats: - Decimal degrees (e.g., 34.0522) - Degrees, minutes, seconds (e.g., 34d3’8”N) - Degrees and decimal minutes (e.g., 34d3.133’N)\nrequired\n\n\nlon\nstr or float\nLongitude value in various formats. Supported formats: - Decimal degrees (e.g., -118.2437) - Degrees, minutes, seconds (e.g., 118d14’37”W) - Degrees and decimal minutes (e.g., 118d14.617’W)\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ntuple\nA tuple of floats containing standardized latitude and longitude in decimal degrees.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf the input format is not recognized or if the coordinates are out of valid geographic ranges (Latitude must be between -90 and 90 and longitude must be between -180 and 180).\n\n\n\nTypeError\nIf the input types are not str or float.\n\n\n\n\n\n\n&gt;&gt;&gt; # Decimal Degrees\n&gt;&gt;&gt; standardize_latlong(34.0522, -118.2437)\n(34.0522, -118.2437)\n&gt;&gt;&gt; # Degrees, Minutes, Seconds (DMS)\n&gt;&gt;&gt; standardize_latlong(\"34d3'8\"N\", \"118d14'37\"W\")\n(34.05222222222222, -118.2436111111111)\n&gt;&gt;&gt; # Degrees and Decimal Minutes (DDM)\n&gt;&gt;&gt; standardize_latlong(\"34d3.133'N\", \"118d14.617'W\")\n(34.05221666666667, -118.24361666666667)"
+  },
+  {
+    "objectID": "reference/latlong.standardize_latlong.html#parameters",
+    "href": "reference/latlong.standardize_latlong.html#parameters",
+    "title": "latlong.standardize_latlong",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nlat\nstr or float\nLatitude value in various formats. Supported formats: - Decimal degrees (e.g., 34.0522) - Degrees, minutes, seconds (e.g., 34d3’8”N) - Degrees and decimal minutes (e.g., 34d3.133’N)\nrequired\n\n\nlon\nstr or float\nLongitude value in various formats. Supported formats: - Decimal degrees (e.g., -118.2437) - Degrees, minutes, seconds (e.g., 118d14’37”W) - Degrees and decimal minutes (e.g., 118d14.617’W)\nrequired"
+  },
+  {
+    "objectID": "reference/latlong.standardize_latlong.html#returns",
+    "href": "reference/latlong.standardize_latlong.html#returns",
+    "title": "latlong.standardize_latlong",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\ntuple\nA tuple of floats containing standardized latitude and longitude in decimal degrees."
+  },
+  {
+    "objectID": "reference/latlong.standardize_latlong.html#raises",
+    "href": "reference/latlong.standardize_latlong.html#raises",
+    "title": "latlong.standardize_latlong",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf the input format is not recognized or if the coordinates are out of valid geographic ranges (Latitude must be between -90 and 90 and longitude must be between -180 and 180).\n\n\n\nTypeError\nIf the input types are not str or float."
+  },
+  {
+    "objectID": "reference/latlong.standardize_latlong.html#examples",
+    "href": "reference/latlong.standardize_latlong.html#examples",
+    "title": "latlong.standardize_latlong",
+    "section": "",
+    "text": "&gt;&gt;&gt; # Decimal Degrees\n&gt;&gt;&gt; standardize_latlong(34.0522, -118.2437)\n(34.0522, -118.2437)\n&gt;&gt;&gt; # Degrees, Minutes, Seconds (DMS)\n&gt;&gt;&gt; standardize_latlong(\"34d3'8\"N\", \"118d14'37\"W\")\n(34.05222222222222, -118.2436111111111)\n&gt;&gt;&gt; # Degrees and Decimal Minutes (DDM)\n&gt;&gt;&gt; standardize_latlong(\"34d3.133'N\", \"118d14.617'W\")\n(34.05221666666667, -118.24361666666667)"
   }
 ]
