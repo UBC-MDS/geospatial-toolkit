@@ -105,6 +105,13 @@ class TestGetAntipode:
         with pytest.raises(ValueError):
             get_antipode((0, 181))
 
+    def test_resolve_names_false(self):
+        # Test resolve_names=False returns None for description.
+        coords, desc = get_antipode((10, 20), resolve_names=False)
+        assert coords == (-10, -160)
+        assert desc is None
+
+
 
 class TestIdentifyOcean:
     # Unit tests for _identify_ocean() - 5 major oceans.
@@ -128,3 +135,8 @@ class TestIdentifyOcean:
     def test_southern_ocean(self):
         # Antarctic waters: (-65, 0)
         assert _identify_ocean(-65, 0) == "Southern(Antarctic) Ocean"
+
+    def test_transition_zone_indian_to_pacific(self):
+        # lon between 100 and 145 AND lat < -10
+        assert _identify_ocean(-20, 120) == "Indian Ocean"
+

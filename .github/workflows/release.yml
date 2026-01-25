@@ -36,7 +36,9 @@ jobs:
 
       - name: Build package using Hatch
         run: |
-            hatch run build:check
+            hatch build --clean
+            pip install twine
+            twine check dist/*
 
             echo ""
             echo "Generated files:"
@@ -52,7 +54,7 @@ jobs:
     name: >-
       Publish Python 🐍 distribution 📦 to PyPI
     # Only publish to PyPI with a release trigger in your repository.
-    if: github.repository_owner == 'PAT0216' && github.event_name == 'release'
+    if: github.repository_owner == 'UBC-MDS' && github.event_name == 'release'
     needs:
       - build
     runs-on: ubuntu-latest
