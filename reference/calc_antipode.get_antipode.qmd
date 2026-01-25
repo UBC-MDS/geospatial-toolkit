@@ -1,0 +1,43 @@
+# calc_antipode.get_antipode { #geospatial_toolkit.calc_antipode.get_antipode }
+
+```python
+calc_antipode.get_antipode(location, resolve_names=True)
+```
+
+Calculate the antipode (opposite point on Earth) for a given location and 
+identify its geographical description.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name          | Type                  | Description                                                                                                                                             | Default    |
+|---------------|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| location      | str or tuple of float | The starting location.  - If str: A query string for a place name (e.g., "Vancouver, Canada"). - If tuple: Coordinates in (latitude, longitude) format. | _required_ |
+| resolve_names | bool                  | Whether to reverse geocode the antipodal coordinates. Default is True.                                                                                  | `True`     |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name            | Type           | Description                                                                                    |
+|-----------------|----------------|------------------------------------------------------------------------------------------------|
+| antipode_coords | tuple of float | The coordinates of the antipode in (latitude, longitude) format.                               |
+| antipode_desc   | str or None    | Human-readable description of the antipode location. Returns None if `resolve_names` is False. |
+
+## Raises {.doc-section .doc-section-raises}
+
+| Name   | Type       | Description                                                                |
+|--------|------------|----------------------------------------------------------------------------|
+|        | ValueError | If the location string cannot be geocoded or coordinates are out of range. |
+|        | TypeError  | If location is not a string or tuple of floats.                            |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> coords, desc = get_antipode("Madrid, Spain")
+>>> print(coords)
+(-40.4168, 176.2962)
+```
+
+```python
+>>> coords, desc = get_antipode((49.2827, -123.1207))
+>>> print(desc)
+"French Southern and Antarctic Lands"
+```

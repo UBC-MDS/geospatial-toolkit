@@ -1,0 +1,47 @@
+# latlong.standardize_latlong { #geospatial_toolkit.latlong.standardize_latlong }
+
+```python
+latlong.standardize_latlong(lat, lon)
+```
+
+Convert various latitude/longitude formats to a standardized decimal degree format.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name      | Type         | Description                                                                                                                                                           | Default    |
+|-----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| lat       | str or float | Latitude value in various formats.                                                                                                                                    | _required_ |
+| lon       | str or float | Longitude value in various formats.                                                                                                                                   | _required_ |
+| Supported |              | - Decimal degrees (e.g., 34.0522, -118.2437) - Degrees, minutes, seconds (e.g., 34°3'8"N, 118°14'37"W) - Degrees and decimal minutes (e.g., 34°3.133'N, 118°14.617'W) | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                                                                          |
+|--------|--------|--------------------------------------------------------------------------------------|
+|        | tuple  | A tuple of floats containing standardized latitude and longitude in decimal degrees. |
+
+## Raises {.doc-section .doc-section-raises}
+
+| Name   | Type       | Description                                                                                                                                                                       |
+|--------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|        | ValueError | If the input format is not recognized or if the coordinates are out of valid geographic ranges  (Latitude must be between -90 and 90 and longitude must be between -180 and 180). |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> # Decimal Degrees
+>>> standardize_latlong(34.0522, -118.2437)
+(34.0522, -118.2437)
+```
+
+```python
+>>> # Degrees, Minutes, Seconds (DMS)
+>>> standardize_latlong("34°3'8"N", "118°14'37"W")
+(34.05222222222222, -118.24361111111111)
+```
+
+```python
+>>> # Degrees and Decimal Minutes (DDM)
+>>> standardize_latlong("34°3.133'N", "118°14.617'W")
+(34.05221666666667, -118.24361666666667)
+```

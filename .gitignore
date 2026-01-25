@@ -243,3 +243,11 @@ cython_debug/
 
 # Hatch-VCS
 _version.py
+
+# Quarto / Documentation output
+/docs/
+/.quarto/
+/_site/
+
+
+objects.json
