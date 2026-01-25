@@ -24,9 +24,9 @@
 """
 Geospatial Toolkit: A modular Python library for common spatial utilities.
 
-This package provides lightweight functions for standardizing coordinates, 
-calculating distances, finding antipodes, and performing point-in-polygon 
-searches for city locations. It is designed to be accessible for GIS 
+This package provides lightweight functions for standardizing coordinates,
+calculating distances, finding antipodes, and performing point-in-polygon
+searches for city locations. It is designed to be accessible for GIS
 analysts and data scientists without requiring heavy GIS software.
 
 Available functions:

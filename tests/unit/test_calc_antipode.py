@@ -112,7 +112,6 @@ class TestGetAntipode:
         assert desc is None
 
 
-
 class TestIdentifyOcean:
     # Unit tests for _identify_ocean() - 5 major oceans.
 
@@ -139,4 +138,3 @@ class TestIdentifyOcean:
     def test_transition_zone_indian_to_pacific(self):
         # lon between 100 and 145 AND lat < -10
         assert _identify_ocean(-20, 120) == "Indian Ocean"
-
