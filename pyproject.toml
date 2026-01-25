@@ -53,6 +53,9 @@ Download = "https://pypi.org/project/geospatial-toolkit/#files"
 dev = [
     "hatch",
     "pre-commit",
+    "ruff",
+    "black",
+    "quartodoc",
 ]
 
 docs = [
