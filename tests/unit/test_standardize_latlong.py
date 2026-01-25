@@ -30,10 +30,10 @@ def test_standardize_latlong_decimal_degrees(lat, lon, expected):
 @pytest.mark.parametrize(
     "lat, lon, expected",
     [
-        ("34°3'8\"N", "118°14'37\"W", (34.052222, -118.243611)),
-        ("34°3'8\"S", "118°14'37\"E", (-34.052222, 118.243611)),
-        ("0°0'0\"N", "0°0'0\"E", (0.0, 0.0)),
-        ("90°0'0\"S", "180°0'0\"W", (-90.0, -180.0)),
+        ("34d3'8\"N", "118d14'37\"W", (34.052222, -118.243611)),
+        ("34d3'8\"S", "118d14'37\"E", (-34.052222, 118.243611)),
+        ("0d0'0\"N", "0d0'0\"E", (0.0, 0.0)),
+        ("90d0'0\"S", "180d0'0\"W", (-90.0, -180.0)),
     ],
 )
 def test_standardize_latlong_dms(lat, lon, expected):
@@ -52,8 +52,8 @@ def test_standardize_latlong_dms(lat, lon, expected):
 @pytest.mark.parametrize(
     "lat, lon, expected",
     [
-        ("34°3.133'N", "118°14.617'W", (34.052217, -118.243617)),
-        ("34°3.133'S", "118°14.617'E", (-34.052217, 118.243617)),
+        ("34d3.133'N", "118d14.617'W", (34.052217, -118.243617)),
+        ("34d3.133'S", "118d14.617'E", (-34.052217, 118.243617)),
     ],
 )
 def test_standardize_latlong_ddm(lat, lon, expected):
@@ -74,8 +74,8 @@ def test_standardize_latlong_ddm(lat, lon, expected):
     [
         (91.0, 0.0),
         (0.0, -181.0),
-        ("91°0'0\"N", "0°0'0\"E"),
-        ("0°0'0\"N", "181°0'0\"W"),
+        ("91d0'0\"N", "0d0'0\"E"),
+        ("0d0'0\"N", "181d0'0\"W"),
     ],
 )
 def test_standardize_latlong_out_of_range(lat, lon):
@@ -92,10 +92,10 @@ def test_standardize_latlong_out_of_range(lat, lon):
 @pytest.mark.parametrize(
     "lat, lon",
     [
-        ("invalid_lat", "118°14'37\"W"),
-        ("34°3'8\"N", "invalid_lon"),
+        ("invalid_lat", "118d14'37\"W"),
+        ("34d3'8\"N", "invalid_lon"),
         ("34 degrees north", "118 degrees west"),
-        ("34°3'8\"Q", "118°14'37\"Z"),
+        ("34d3'8\"Q", "118d14'37\"Z"),
     ],
 )
 def test_standardize_latlong_invalid_format(lat, lon):
@@ -108,10 +108,10 @@ def test_standardize_latlong_invalid_format(lat, lon):
 # Test mixed coordinate formats
 
 @pytest.mark.parametrize("lat, lon, expected", [
-    (34.0522, "118°14'37\"W", (34.0522, -118.243611)),
-    ("34°3'8\"N", -118.2437, (34.052222, -118.2437)),
-    ("34°3.133'N", "118°14'37\"W", (34.052217, -118.243611)),
-    ("34°3'8\"N", "118°14.617'W", (34.052222, -118.243617)),
+    (34.0522, "118d14'37\"W", (34.0522, -118.243611)),
+    ("34d3'8\"N", -118.2437, (34.052222, -118.2437)),
+    ("34d3.133'N", "118d14'37\"W", (34.052217, -118.243611)),
+    ("34d3'8\"N", "118d14.617'W", (34.052222, -118.243617)),
 ])
 def test_standardize_latlong_mixed_formats(lat, lon, expected):
     """
@@ -134,5 +134,5 @@ def test_standardize_latlong_non_string_non_float():
     """
     Test that non-string, non-float inputs raise ValueError.
     """
-    with pytest.raises(ValueError, match="Input format not recognized or invalid"):
+    with pytest.raises(TypeError, match="Coordinate must be a string or a float"):
         standardize_latlong([34.0], {118.0})
