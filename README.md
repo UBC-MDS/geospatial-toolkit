@@ -46,8 +46,24 @@ To use geospatial-toolkit in your code:
 
 ```python
 import geospatial_toolkit as gst
+import pandas as pd
+
+# Standardize latitude and longitude
 gst.standardize_latlong("34°3'8\"N", "118°14'37\"W")
+
+# Calculate Haversine distance between two points
+point_a = (49.2827, -123.1207) # Vancouver
+point_b = (45.5017, -73.5673)  # Montreal
+gst.haversine_distance(point_a, point_b)
+
+# Get antipode of a location
+gst.get_antipode("Vancouver, BC")
+
+# Find which city contains a given point
+gst.point_to_city(49.2827, -123.1207, cities_df=pd.DataFrame(...))
+
 ```
+
 ## Development Environment
 
 To set up the development environment, navigate to your local folder of choice and follow the instructions below
