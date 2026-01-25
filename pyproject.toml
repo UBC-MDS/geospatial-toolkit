@@ -74,6 +74,21 @@ tests = [
     "pytest-xdist",
 ]
 
+all = [
+    "hatch",
+    "pre-commit",
+    "ruff",
+    "black",
+    "quartodoc",
+    "pip-audit",
+    "twine",
+    "pytest",
+    "pytest-cov",
+    "pytest-raises",
+    "pytest-randomly",
+    "pytest-xdist",
+]
+
 
 ################################################################################
 # Tool Configuration
