@@ -80,3 +80,35 @@ def test_standardize_latlong_invalid_format(lat, lon):
     """
     with pytest.raises(ValueError, match="Input format not recognized or invalid"):
         standardize_latlong(lat, lon)
+
+# Test mixed coordinate formats
+
+@pytest.mark.parametrize("lat, lon, expected", [
+    (34.0522, "118°14'37\"W", (34.0522, -118.243611)),
+    ("34°3'8\"N", -118.2437, (34.052222, -118.2437)),
+    ("34°3.133'N", "118°14'37\"W", (34.052217, -118.243611)),
+    ("34°3'8\"N", "118°14.617'W", (34.052222, -118.243617)),
+])
+def test_standardize_latlong_mixed_formats(lat, lon, expected):
+    """
+    Test that mixed format latitude/longitude inputs are converted correctly.
+    """
+    result_lat, result_lon = standardize_latlong(lat, lon)
+
+    assert result_lat == pytest.approx(expected[0], abs=1e-6)
+    assert result_lon == pytest.approx(expected[1], abs=1e-6)
+
+def test_standardize_latlong_unrecognized_string():
+    """
+    Test that unrecognized string inputs raise ValueError.
+    """
+    with pytest.raises(ValueError, match="Input format not recognized or invalid"):
+        standardize_latlong("wrong", "also wrong")
+
+
+def test_standardize_latlong_non_string_non_float():
+    """
+    Test that non-string, non-float inputs raise ValueError.
+    """
+    with pytest.raises(ValueError, match="Input format not recognized or invalid"):
+        standardize_latlong([34.0], {118.0})
