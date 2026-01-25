@@ -100,6 +100,22 @@ conda activate geospatial
 pip install -e .
 ```
 
+5. Install development dependencies
+
+This project uses optional dependency groups for development, testing, documentation, and packaging.
+
+Install all development-related dependencies with:
+```
+pip install -e ".[all]"
+```
+Alternatively, you can install specific groups:
+
+```
+pip install -e ".[dev]"
+pip install -e ".[tests]"
+pip install -e ".[docs]"
+```
+
 ## Running Tests
 
 To run the full test suite, ensure the development environment is activated and the package is installed in editable mode.
