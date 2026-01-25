@@ -43,7 +43,7 @@ dependencies = [
 Homepage = "https://github.com/UBC-MDS/geospatial-toolkit"
 "Source Code" = "https://github.com/UBC-MDS/geospatial-toolkit"
 "Bug Tracker" = "https://github.com/UBC-MDS/geospatial-toolkit/issues"
-Documentation = "https://github.com/UBC-MDS/geospatial-toolkit/blob/main/README.md"
+Documentation = "https://ubc-mds.github.io/geospatial-toolkit/"
 Download = "https://pypi.org/project/geospatial-toolkit/#files"
 
 [project.optional-dependencies]
