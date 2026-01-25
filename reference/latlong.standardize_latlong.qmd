@@ -12,7 +12,7 @@ Convert various latitude/longitude formats to a standardized decimal degree form
 |-----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | lat       | str or float | Latitude value in various formats.                                                                                                                                    | _required_ |
 | lon       | str or float | Longitude value in various formats.                                                                                                                                   | _required_ |
-| Supported |              | - Decimal degrees (e.g., 34.0522, -118.2437) - Degrees, minutes, seconds (e.g., 34°3'8"N, 118°14'37"W) - Degrees and decimal minutes (e.g., 34°3.133'N, 118°14.617'W) | _required_ |
+| Supported |              | - Decimal degrees (e.g., 34.0522, -118.2437) - Degrees, minutes, seconds (e.g., 34Â°3'8"N, 118Â°14'37"W) - Degrees and decimal minutes (e.g., 34Â°3.133'N, 118Â°14.617'W) | _required_ |
 
 ## Returns {.doc-section .doc-section-returns}
 
@@ -36,12 +36,12 @@ Convert various latitude/longitude formats to a standardized decimal degree form
 
 ```python
 >>> # Degrees, Minutes, Seconds (DMS)
->>> standardize_latlong("34°3'8"N", "118°14'37"W")
+>>> standardize_latlong("34Â°3'8"N", "118Â°14'37"W")
 (34.05222222222222, -118.24361111111111)
 ```
 
 ```python
 >>> # Degrees and Decimal Minutes (DDM)
->>> standardize_latlong("34°3.133'N", "118°14.617'W")
+>>> standardize_latlong("34Â°3.133'N", "118Â°14.617'W")
 (34.05221666666667, -118.24361666666667)
 ```
