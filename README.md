@@ -46,8 +46,23 @@ To use geospatial-toolkit in your code:
 
 ```python
 import geospatial_toolkit as gst
+import pandas as pd
+
+# Standardize latitude and longitude
 gst.standardize_latlong("34°3'8\"N", "118°14'37\"W")
+
+# Calculate Haversine distance between two points
+point_a = (49.2827, -123.1207) # Vancouver
+point_b = (45.5017, -73.5673)  # Montreal
+gst.haversine_distance(point_a, point_b)
+
+# Get antipode of a location
+gst.get_antipode("Vancouver, BC")
+
+# Find which city contains a given point
+gst.point_to_city(49.2827, -123.1207, cities_df=pd.DataFrame(...))
 ```
+
 ## Development Environment
 
 To set up the development environment, navigate to your local folder of choice and follow the instructions below
@@ -55,65 +70,78 @@ To set up the development environment, navigate to your local folder of choice a
 1. Clone the repository:
 
 Using HTTPS:
-```
+```bash
 git clone https://github.com/UBC-MDS/geospatial-toolkit.git
 ```
 
 Or, using SSH:
-```
+```bash
 git clone git@github.com:UBC-MDS/geospatial-toolkit.git
 ```
 
 Navigate to the project root:
-```
+```bash
 cd geospatial-toolkit
 ```
 
 2. Create project Conda environment:
-```
+```bash
 conda env create -f environment.yml
 ```
 
 3. Activate the Conda environment:
-```
+```bash
 conda activate geospatial
 ```
 
 4. Install the package in editable mode
-```
+```bash
 pip install -e .
+```
+
+5. (Recommended) Install development dependencies
+
+This project uses optional dependency groups for development, testing, documentation, and packaging.
+
+Install all development-related dependencies with:
+```bash
+pip install -e ".[all]"
+```
+Alternatively, you can install specific groups:
+
+```bash
+pip install -e ".[dev]"
+pip install -e ".[tests]"
+pip install -e ".[docs]"
 ```
 
 ## Running Tests
 
-To run the full test suite, ensure the development environment is activated and the package is installed in editable mode.
+To run the full test suite, ensure the development environment is activated and the package is installed in editable mode with testing dependencies.
 
 In terminal, from the project root directory, run: 
-```
+```bash
 pytest
 ```
+
 To run tests with coverage, run:
-```
+```bash
 pytest --cov=geospatial_toolkit
 ```
 
 ## Building Documentation
 
-Install the package in editable mode:
+Ensure the development environment is activated and the package is installed in editable mode with documentation dependencies:
 
 ```bash
-pip install -e .
+pip install -e ".[docs]"
 ```
-
 Generate the API reference:
-
 ```bash
 quartodoc build
 ```
-
 Preview the site locally:
-
-```
+```bash
 quarto preview
 ```
 
