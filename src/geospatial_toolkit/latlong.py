@@ -54,7 +54,7 @@ def standardize_latlong(lat, lon):
         Parse a single coordinate (latitude or longitude) from various formats to decimal degrees.
         """
         if not isinstance(coord, (str, float, int)):
-            raise TypeError(f"Coordinate must be a string or a float, not {type(coord).__name__})
+            raise TypeError(f"Coordinate must be a string or a float, not {type(coord).__name__}")
         
         try:
             return float(coord)
