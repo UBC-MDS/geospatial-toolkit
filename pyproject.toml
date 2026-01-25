@@ -53,6 +53,9 @@ Download = "https://pypi.org/project/geospatial-toolkit/#files"
 dev = [
     "hatch",
     "pre-commit",
+    "ruff",
+    "black",
+    "quartodoc",
 ]
 
 docs = [
@@ -64,6 +67,21 @@ build = [
     "twine",
 ]
 tests = [
+    "pytest",
+    "pytest-cov",
+    "pytest-raises",
+    "pytest-randomly",
+    "pytest-xdist",
+]
+
+all = [
+    "hatch",
+    "pre-commit",
+    "ruff",
+    "black",
+    "quartodoc",
+    "pip-audit",
+    "twine",
     "pytest",
     "pytest-cov",
     "pytest-raises",
