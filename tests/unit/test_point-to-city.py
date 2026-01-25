@@ -1,7 +1,7 @@
 """
 Tests for the point-to-city function.
 
-Note: ChatGPT was used to suggest additional edge cases, 
+Note: ChatGPT was used to suggest additional edge cases,
 validate the structure and confirm the usecases of these unit tests.
 """
 
@@ -10,6 +10,7 @@ import pytest
 from shapely.geometry import Polygon
 
 from geospatial_toolkit.point_to_city import point_to_city
+
 
 @pytest.fixture
 def cities_df():
@@ -21,9 +22,9 @@ def cities_df():
       - Burnaby:   lon [-123, -122], lat [49, 50]
     """
 
-    vancouver_poly = Polygon( [(-124, 49), (-123, 49), (-123, 50), (-124, 50)] )
+    vancouver_poly = Polygon([(-124, 49), (-123, 49), (-123, 50), (-124, 50)])
 
-    burnaby_poly = Polygon( [(-123, 49), (-122, 49), (-122, 50), (-123, 50)] )
+    burnaby_poly = Polygon([(-123, 49), (-122, 49), (-122, 50), (-123, 50)])
 
     return pd.DataFrame(
         {
@@ -31,7 +32,6 @@ def cities_df():
             "geometry": [vancouver_poly, burnaby_poly],
         }
     )
-
 
 
 def test_point_inside_vancouver_returns_vancouver(cities_df):
@@ -87,17 +87,18 @@ def test_cities_df_not_dataframe_raises_typeerror():
         point_to_city(49.5, -123.5, cities_df=["not", "a", "dataframe"])
 
 
-@pytest.mark.parametrize("lat, lon", [
-    (91.0, -123.5),    # lat too high
-    (-91.0, -123.5),   # lat too low
-    (49.5, 181.0),     # lon too high
-    (49.5, -181.0),    # lon too low
-])
+@pytest.mark.parametrize(
+    "lat, lon",
+    [
+        (91.0, -123.5),  # lat too high
+        (-91.0, -123.5),  # lat too low
+        (49.5, 181.0),  # lon too high
+        (49.5, -181.0),  # lon too low
+    ],
+)
 def test_lat_lon_out_of_range_raises_valueerror(lat, lon, cities_df):
     """
     Test whether out-of-range latitude/longitude values raise a ValueError.
     """
     with pytest.raises(ValueError):
         point_to_city(lat, lon, cities_df)
-
-
