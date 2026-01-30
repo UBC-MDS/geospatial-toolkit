@@ -156,7 +156,6 @@ quarto preview
 - Copyright © 2026 Athul, Bala, Prabuddha, Shreya.
 - Free software distributed under the [MIT License](./LICENSE).
 
-## Atribution
+## Attribution
 
-Gen AI tools were used to assist in the creation of this package, including code generation and documentation drafting. All generated content was reviewed and edited by the human authors to ensure accuracy and quality.
-
+Gen AI tools (Google Gemini, OpenAI ChatGPT, and GitHub Copilot) were used to assist in the creation of this package, including code generation and documentation drafting. All generated content was reviewed and edited by the human authors to ensure accuracy and quality.
