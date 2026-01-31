@@ -53,21 +53,36 @@ Then run:
 ```python
 import geospatial_toolkit as gst
 import pandas as pd
+from shapely.geometry import Polygon
 
-# Standardize latitude and longitude
-# 'd' stands for degree
-gst.standardize_latlong("34d3'8\"N", "118d14'37\"W")
+# 1. Standardize latitude and longitude
+gst.standardize_latlong("34° 3' 8\" N", "118° 14' 37\" W")
 
-# Calculate Haversine distance between two points
+# 2. Calculate Great-Circle distance
 point_a = (49.2827, -123.1207) # Vancouver
 point_b = (45.5017, -73.5673)  # Montreal
 gst.haversine_distance(point_a, point_b)
 
-# Get antipode of a location
-gst.get_antipode("Vancouver, BC")
+# 3. Get the antipode of a location
+gst.get_antipode((49.2827, -123.1207))
 
-# Find which city contains a given point
-gst.point_to_city(49.2827, -123.1207, cities_df=pd.DataFrame(...))
+# 4. Find which city contains a given point (using a reference DataFrame)
+data = {
+    'city_name': ['Vancouver', 'Port-aux-Français'],
+    'geometry': [
+        Polygon([(-124, 48), (-122, 48), (-122, 50), (-124, 50)]), 
+        Polygon([(69, -50), (71, -50), (71, -48), (69, -48)])
+    ]
+}
+cities_df = pd.DataFrame(data)
+
+gst.point_to_city(49.2827, -123.1207, cities_df)
+```
+
+To exit the Python session:
+
+```
+exit()
 ```
 
 ## Development Environment
