@@ -16,7 +16,10 @@ dynamic = ["version"]
 
 description = "Python package for geospatial functions."
 authors = [
-    { name = "Athul, Bala, Prabuddha, Shreya", email = "prabuddha.tamhane@gmail.com" },
+    { name = "Athul Sasidharan", email = "athulchira@gmail.com" },
+    { name = "Prabuddha Tamhane", email = "prabuddha.tamhane@gmail.com" },
+    { name = "Shrabanti Bala Joya", email = "shrabantibala1502@gmail.com" },
+    { name = "Shreya Kakachery", email = "shreyakakachery@gmail.com" },
 ]
 license = "MIT"
 requires-python = ">= 3.10" # Adjust based on the minimum version of Python that you support

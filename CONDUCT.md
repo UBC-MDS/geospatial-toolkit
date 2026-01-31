@@ -56,11 +56,21 @@ Examples of representing our community include using an official e-mail address,
 posting via an official social media account, or acting as an appointed
 representative at an online or offline event.
 
+## Project Contributors
+
+This project is maintained and contributed to by:
+
+- Athul Sasidharan — athulchira@gmail.com
+- Prabuddha Tamhane — prabuddha.tamhane@gmail.com
+- Shrabanti Bala Joya — shrabantibala1502@gmail.com
+- Shreya Kakachery — shreyakakachery@gmail.com
+
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the project maintainers via
-**example@student.ubc.ca**.
+- **athulchira@gmail.com**
+- **prabuddha.tamhane@gmail.com**
 
 All complaints will be reviewed and investigated promptly and fairly. If the 
 incident involves a member of the project team, that individual will recuse 
