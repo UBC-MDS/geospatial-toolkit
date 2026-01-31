@@ -54,6 +54,7 @@ import geospatial_toolkit as gst
 import pandas as pd
 
 # Standardize latitude and longitude
+# 'd' stands for degree
 gst.standardize_latlong("34d3'8\"N", "118d14'37\"W")
 
 # Calculate Haversine distance between two points
