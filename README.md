@@ -37,6 +37,7 @@ Among the four main functions in Geospatial Toolkit, some overlap with existing 
 ## Get started
 
 ### Installation
+
 You can install the latest version of the package from [TestPyPI](https://test.pypi.org/):
 
 ```bash
@@ -45,9 +46,10 @@ pip install -i https://test.pypi.org/simple/ geospatial-toolkit
 
 To use geospatial-toolkit in your code, start a Python session:
 
-```
+```bash
 python
 ```
+
 Then run:
 
 ```python
@@ -81,54 +83,62 @@ gst.point_to_city(49.2827, -123.1207, cities_df)
 
 To exit the Python session:
 
-```
+```python
 exit()
 ```
 
 ## Development Environment
+
+### Prerequisites
+
+- Python 3.11 or higher
+- [Conda](https://docs.conda.io/en/latest/miniconda.html) or Mamba package manager
 
 To set up the development environment, navigate to your local folder of choice and follow the instructions below
 
 1. Clone the repository:
 
 Using HTTPS:
+
 ```bash
 git clone https://github.com/UBC-MDS/geospatial-toolkit.git
 ```
 
 Or, using SSH:
+
 ```bash
 git clone git@github.com:UBC-MDS/geospatial-toolkit.git
 ```
 
 Navigate to the project root:
+
 ```bash
 cd geospatial-toolkit
 ```
 
-2. Create project Conda environment:
+Create and activate the project Conda environment:
+
 ```bash
 conda env create -f environment.yml
-```
-
-3. Activate the Conda environment:
-```bash
 conda activate geospatial
 ```
 
-4. Install the package in editable mode
+Install the package in editable mode
+
 ```bash
 pip install -e .
 ```
 
-5. (Recommended) Install development dependencies
+(Recommended) Install development dependencies
 
 This project uses optional dependency groups for development, testing, documentation, and packaging.
 
 Install all development-related dependencies with:
+
 ```bash
 pip install -e ".[all]"
 ```
+
 Alternatively, you can install specific groups:
 
 ```bash
@@ -141,12 +151,14 @@ pip install -e ".[docs]"
 
 To run the full test suite, ensure the development environment is activated and the package is installed in editable mode with testing dependencies.
 
-In terminal, from the project root directory, run: 
+In terminal, from the project root directory, run:
+
 ```bash
 pytest
 ```
 
 To run tests with coverage, run:
+
 ```bash
 pytest --cov=geospatial_toolkit
 ```
@@ -158,16 +170,21 @@ Ensure the development environment is activated and the package is installed in 
 ```bash
 pip install -e ".[docs]"
 ```
+
 Generate the API reference:
+
 ```bash
 quartodoc build
 ```
+
 Preview the site locally:
+
 ```bash
 quarto preview
 ```
 
 ## Contributors
+
 - Athul Sasidharan
 - Prabuddha Tamhane
 - Shrabanti Bala Joya
