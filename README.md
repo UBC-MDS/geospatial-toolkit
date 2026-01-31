@@ -165,6 +165,10 @@ pytest --cov=geospatial_toolkit
 
 ## Building Documentation
 
+This project uses quartodoc and Quarto to generate its documentation.
+
+Note on Dependencies: Building the documentation requires `nbformat` to execute Python code blocks. This is included in the `environment.yml` file.
+
 Ensure the development environment is activated and the package is installed in editable mode with documentation dependencies:
 
 ```bash
