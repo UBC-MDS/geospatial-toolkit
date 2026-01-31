@@ -78,3 +78,57 @@ Addressed the following Peer/TA Feedback:
 - Fixed CI workflow by adding Quarto setup action
 - Fixed CD workflow to use direct build commands instead of hatch environment
 - Fixed typo in latlong function
+
+## [1.0.0] - (2026-01-17)
+
+### Added
+
+- **Core Functions Implementation**
+  - `haversine_distance()`: Calculate great-circle distance between two geographic points
+    - Supports km, miles, and meters output units
+    - Comprehensive input validation for coordinates
+  - `get_antipode()`: Find the diametrically opposite point on Earth
+    - Supports both string (place names) and tuple (coordinates) inputs
+    - Includes `_identify_ocean()` helper for ocean identification when reverse geocoding fails
+    - Forward and reverse geocoding via geopy-Nominatim
+  - `standardize_latlong()`: Convert coordinate formats to decimal degrees
+    - Supports decimal degrees, DMS (degrees/minutes/seconds), and DDM (degrees/decimal minutes)
+    - Handles N/S/E/W directional suffixes
+  - `point_to_city()`: Identify which city polygon contains a coordinate
+    - Point-in-polygon test using Shapely geometry
+    - Requires pandas DataFrame with geometry and city_name columns
+
+- **Test Suite**
+  - `test_calc_antipode.py`: 15+ test cases for get_antipode function
+    - Tests for GeocoderServiceError, GeocoderTimedOut exceptions
+    - Edge cases for ocean identification and reverse geocoding
+    - Coverage increased from 67.5% to 87.5%
+  - `test_haversine_distance.py`: Tests for distance calculation accuracy
+    - Input type validation tests
+    - Coordinate range validation tests
+  - `test_standardize_latlong.py`: Tests for coordinate parsing
+    - Tests for all supported input formats
+    - Out-of-range coordinate tests
+  - `test_point-to-city.py`: Tests for point-in-polygon functionality
+    - Tests with Vancouver and Burnaby polygons
+    - None result tests for points outside all polygons
+
+- **Dependencies**
+  - Added `geopy>=2.4.0` for geocoding functionality
+  - Added `shapely>=2.0.1` for geometric operations
+  - Added `pandas>=2.0.0` for DataFrame support
+  - Added `environment.yml` for conda environment setup
+
+### Changed
+
+- Renamed `point-to-city.py` to `point_to_city.py` (Python naming convention)
+- Updated `pyproject.toml` with correct UBC-MDS organization URLs
+- Enhanced docstrings with numpy-style documentation
+- Added GenAI attribution comments to all function modules
+- Removed `test_example.py` placeholder file
+
+### Fixed
+
+- Fixed project URLs in `pyproject.toml` (changed from PAT0216 to UBC-MDS)
+- Added `_identify_ocean()` docstring clarification about approximate boundaries
+
