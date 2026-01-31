@@ -28,6 +28,8 @@ website:
         href: index.qmd    
       - text: "Reference"
         href: reference/index.qmd
+      - text: "Tutorial"
+        href: vignettes/tutorial.qmd
 
 
 format:
