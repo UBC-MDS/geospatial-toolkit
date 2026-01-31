@@ -36,10 +36,11 @@ Among the four main functions in Geospatial Toolkit, some overlap with existing 
 
 ## Get started
 
-You can install this package into your preferred Python environment using pip:
+### Installation
+You can install the latest version of the package from [TestPyPI](https://test.pypi.org/):
 
 ```bash
-pip install geospatial_toolkit
+pip install -i https://test.pypi.org/simple/ geospatial-toolkit
 ```
 
 To use geospatial-toolkit in your code, start a Python session:
