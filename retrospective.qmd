@@ -7,11 +7,17 @@ depth: 4
 
 ### Overview
 
-This retrospective reflects on the team’s work organization, collaboration practices, and use of tooling across all Milestones (1–4). We use GitHub Project views and issue metadata to ground the discussion in observable data, and we apply the DAKI (Drop, Add, Keep, Improve) framework to identify concrete actions for future projects.
+This retrospective reflects on the team’s work organization, collaboration practices, and use of tooling across all Milestones. We use GitHub Project views and issue metadata to ground the discussion in observable data, and we apply the DAKI (Drop, Add, Keep, Improve) framework to identify concrete actions for future projects.
 
 #### **Completion Rate Across Milestones**
 
+The burn-up chart below shows cumulative task completion over time, helping visualize our pace and how work accumulated across milestones.
+
+![Burn-Up Chart: Tasks Completed Over Time](img/team_burnup_chart.png){#fig-burnup width=80%}
+
 #### **Velocity Across Milestones**
+
+Using the [Milestone Progress](https://github.com/orgs/UBC-MDS/projects/322/views/12) we observed that Milestones 1 and 2 progressed at a relatively steady pace, while Milestone 3 experienced a surge in task completions near the deadline. This indicates that while overall work was completed on time, review and integration efforts accumulated toward the end of the milestone.
 
 #### **Team Contributions**
 
@@ -19,9 +25,10 @@ Looking at issue counts across Milestones 1–3, we see that work was largely di
 
 ![Team Contributions by Milestone and Assignee](img/team_contributions_bar.png){#fig-team-cont width=80%}
 
-Most team members contributed meaningfully across milestones. Some variation in task counts reflects differences in task complexity (e.g., larger coding tasks vs smaller documentation or bug-fix tasks). The "No Assignees" category comes from leftover Dependabot PRs.
+Most team members contributed meaningfully across milestones. Some variation in task counts reflects differences in task complexity (e.g., larger coding tasks vs smaller documentation or bug fix tasks). Some minor fixes were sometimes bundled together into a single task, which slightly affects the task counts but does not significantly impact overall workload distribution. The "No Assignees" category comes from leftover Dependabot PRs.
 
 During Milestone 3, we faced some availability challenges within the team. This led to a slightly higher workload for certain members, including taking on additional tasks to ensure progress continued smoothly. For example, some extra work included addressing unforeseen issues and helping integrate teammates’ fixes.
+
 
 ### Retrospective Discussions
 
@@ -70,8 +77,6 @@ If this project were to scale up or transition into a longer-term open-source or
 
 Looking at our [Milestone Progress](https://github.com/orgs/UBC-MDS/projects/322/views/12) view on the project board, we found that Milestones 1 and 2 had a similar number of tasks (22 and 21, respectively). However, Milestone 2 involved a heavier workload per task, and Milestone 3 contained more tasks overall (24) than initially anticipated, particularly for coding and integration work. Milestone 3 was underestimated due to unforeseen changes, such as handling edge cases like the degree symbol and coordinating fixes from teammates.
 
-Delayed updates to issue statuses also made it harder for us to track work in progress. Moving forward, maintaining up-to-date issue statuses and better anticipating task complexity will help us plan more accurately.
-
 #### **Bottlenecks**
 
 When reviewing the [Team Workload](https://github.com/orgs/UBC-MDS/projects/322/views/13) view on the project board and issue timelines, we identified several process related bottlenecks. In some cases, we did not consistently update task statuses to “In Progress,” which reduced visibility into active work and made it harder to identify capacity constraints early.
@@ -82,7 +87,7 @@ We also observed that several tasks spent time in the “Review” stage, as pul
 
 The project maintained shared responsibility across team members for most tasks, reducing our dependency on any single contributor.
 
-However, in Milestone 3 (@fig-team-cont), sjbalagit had the highest number of tasks. If they had been unavailable (e.g., sick), we would have faced delays. However in such a scenario, we could hold team meetings to redistribute tasks so that others could pick up the work.
+In the [Team Workload](https://github.com/orgs/UBC-MDS/projects/322/views/13) view we can see that sjbalagit has the highest number of tasks. If they had been unavailable (e.g., sick), we would have faced delays. However in such a scenario, we could hold team meetings to redistribute tasks so that others could pick up the work.
 
 
 
