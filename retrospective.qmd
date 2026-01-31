@@ -1,0 +1,46 @@
+---
+title: Retrospectives
+format: html
+---
+
+## Overview
+
+### Completion Rate Across Milestones
+
+### Velocity Across Milestones
+
+### Team Contributions
+
+## Retrospective Discussions
+
+### DAKI (Drop, Add, Keep, Improve) Overview:
+
+#### Drop
+- Open PRs till late in the milestone, leaving insufficient time for review and fixes
+#### Add
+- Follow a specific format for commit messages (e.g. [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/))
+- Issue templates for documentation, tasks, features etc.
+- PR review checklist.
+#### Keep
+- Using rules to keep main protected from unreviewed merges.
+- Using GitFlow main <- dev <- feature branches.
+- Regular commits with meaningful messages.
+- Using milestones to group work based on phase.
+#### Improve
+- Using issues more for project related discussions
+- Creating complete issues and PRs - properly tagged with milestone, project, type, assignee, etc.
+- Set clear ownership for PRs after opening, so the author remains responsible for addressing review feedback before merging.
+- Communication on workload: break down of workload early on and communicating with the team if work needs to be redistributed.
+- Set clear rules on PR quality to ensure less time is spent on reviews.
+
+### Development Tools, Infrastructure, and Scaling Up
+
+### Planning Accuracy
+
+### Bottlenecks
+
+### Bus Factor
+
+
+
+
