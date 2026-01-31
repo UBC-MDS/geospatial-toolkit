@@ -132,3 +132,29 @@ Addressed the following Peer/TA Feedback:
 - Fixed project URLs in `pyproject.toml` (changed from PAT0216 to UBC-MDS)
 - Added `_identify_ocean()` docstring clarification about approximate boundaries
 
+## [0.0.1] - (2026-01-10)
+
+### Added
+
+- **Initial Project Structure**
+  - Created project from copier template
+  - Set up `pyproject.toml` with hatchling build system
+  - MIT License
+  - Basic `README.md` with project description and function specifications
+
+- **Function Specifications (Docstrings Only)**
+  - `haversine_distance`: Initial docstring for great-circle distance calculation
+  - `get_antipode`: Initial docstring for antipode calculation
+  - `standardize_latlong`: Initial docstring for coordinate format conversion
+  - `point-to-city`: Initial docstring for point-in-polygon city lookup
+
+- **Documentation**
+  - `CODE_OF_CONDUCT.md` renamed to `CONDUCT.md` with updated content
+  - `CONTRIBUTING.md` with contribution guidelines and GenAI attribution requirements
+
+### Changed
+
+- Updated `README.md` with function descriptions and attributions
+- Removed `example.py` placeholder script
+
+---
