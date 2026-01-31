@@ -42,14 +42,20 @@ You can install this package into your preferred Python environment using pip:
 pip install geospatial_toolkit
 ```
 
-To use geospatial-toolkit in your code:
+To use geospatial-toolkit in your code, start a Python session:
+
+```
+python
+```
+Then run:
 
 ```python
 import geospatial_toolkit as gst
 import pandas as pd
 
 # Standardize latitude and longitude
-gst.standardize_latlong("34°3'8\"N", "118°14'37\"W")
+# 'd' stands for degree
+gst.standardize_latlong("34d3'8\"N", "118d14'37\"W")
 
 # Calculate Haversine distance between two points
 point_a = (49.2827, -123.1207) # Vancouver
