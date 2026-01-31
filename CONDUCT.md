@@ -60,7 +60,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the project maintainers via
-**example@student.ubc.ca**.
+**athulchira@gmail.com**.
 
 All complaints will be reviewed and investigated promptly and fairly. If the 
 incident involves a member of the project team, that individual will recuse 
