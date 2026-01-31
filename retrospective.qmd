@@ -68,13 +68,15 @@ If this project were to scale up or transition into a longer-term open-source or
 
 #### **Planning Accuracy**
 
-Milestone progress view
+Looking at our [Milestone Progress](https://github.com/orgs/UBC-MDS/projects/322/views/12) view on the project board, we found that Milestones 1 and 2 had a similar number of tasks (22 and 21, respectively). However, Milestone 2 involved a heavier workload per task, and Milestone 3 contained more tasks overall (24) than initially anticipated, particularly for coding and integration work. Milestone 3 was underestimated due to unforeseen changes, such as handling edge cases like the degree symbol and coordinating fixes from teammates.
+
+Delayed updates to issue statuses also made it harder for us to track work in progress. Moving forward, maintaining up-to-date issue statuses and better anticipating task complexity will help us plan more accurately.
 
 #### **Bottlenecks**
 
-When reviewing the project board and issue timelines, we identified several process-related bottlenecks. In some cases, we did not consistently update task statuses to “In Progress,” which reduced visibility into active work and made it harder to identify capacity constraints early.
+When reviewing the [Team Workload](https://github.com/orgs/UBC-MDS/projects/322/views/13) view on the project board and issue timelines, we identified several process related bottlenecks. In some cases, we did not consistently update task statuses to “In Progress,” which reduced visibility into active work and made it harder to identify capacity constraints early.
 
-We also observed that several tasks spent time in the “Review” stage, as pull request reviews and follow-up fixes required multiple iterations. Although we completed all required work before the milestone deadline, many tasks were closed close to the due date, indicating that review and integration work tended to accumulate toward the end of milestones.
+We also observed that several tasks spent time in the “Review” stage, as pull request reviews and follow up fixes required multiple iterations. Although we completed all required work before the milestone deadline, many tasks were closed close to the due date, indicating that review and integration work tended to accumulate toward the end of milestones.
 
 #### **Bus Factor**
 
