@@ -151,6 +151,12 @@ quarto preview
 - Shrabanti Bala Joya
 - Shreya Kakachery
 
+## How to cite
+
+If you use this package in coursework, reports, or research, please cite the GitHub repository:
+
+Geospatial Toolkit contributors. (2026). *geospatial_toolkit* (Version 3.0.0) [Software]. GitHub. https://github.com/UBC-MDS/geospatial-toolkit
+
 ## Copyright
 
 - Copyright © 2026 Athul, Bala, Prabuddha, Shreya.
