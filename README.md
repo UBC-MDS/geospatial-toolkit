@@ -41,7 +41,7 @@ Among the four main functions in Geospatial Toolkit, some overlap with existing 
 You can install the latest version of the package from [TestPyPI](https://test.pypi.org/):
 
 ```bash
-pip install -i https://test.pypi.org/simple/ geospatial-toolkit
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ geospatial-toolkit
 ```
 
 To use geospatial-toolkit in your code, start a Python session:
