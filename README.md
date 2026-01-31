@@ -59,7 +59,7 @@ from shapely.geometry import Polygon
 
 # 1. Standardize latitude and longitude
 # 'd' stands for degree
-gst.standardize_latlong('34d3'8"N', '118d14'37"W')
+gst.standardize_latlong('34d3\'8"N', '118d14\'37"W')
 
 # 2. Calculate Great-Circle distance
 point_a = (49.2827, -123.1207) # Vancouver
