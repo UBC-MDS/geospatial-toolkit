@@ -5,18 +5,22 @@ format: html
 
 ## Overview
 
+This retrospective reflects on the team’s work organization, collaboration practices, and use of tooling across all Milestones (1–4). We use GitHub Project views and issue metadata to ground the discussion in observable data, and we apply the DAKI (Drop, Add, Keep, Improve) framework to identify concrete actions for future projects.
+
 ### Completion Rate Across Milestones
 
 ### Velocity Across Milestones
 
 ### Team Contributions
 
+Refer to 'Bar chart : Items by milestone and assignees'
+
 ## Retrospective Discussions
 
 ### DAKI (Drop, Add, Keep, Improve) Overview:
 
 #### Drop
-- Open PRs till late in the milestone, leaving insufficient time for review and fixes
+- Open PRs till late in the milestone, leaving insufficient time for review and fixes.
 #### Add
 - Follow a specific format for commit messages (e.g. [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/))
 - Issue templates for documentation, tasks, features etc.
@@ -35,11 +39,28 @@ format: html
 
 ### Development Tools, Infrastructure, and Scaling Up
 
+Throughout the project, we applied several development tools and infrastructure practices learned in this course, including GitHub Actions for CI/CD, branch protection rules, versioning, and automated documentation builds.
+
+If this project were to scale up or transition into a longer-term open-source or production setting, we would further formalize these practices by:
+
+- Expanding CI test matrices across operating systems and Python versions.
+- Enforcing coverage thresholds using tools like Codecov.
+- Adding codeowners and stricter review requirements.
+- Formalizing contribution guidelines in CONTRIBUTING.md to support external contributors.
+- Holding regular meetings or check-ins to improve coordination and identify issues early on.
+- Enforcing the consistent use of conventions (e.g., commit message standards, PR templates, and issue templates) to improve communication and reduce review overhead.
+
+These practices would reduce risk, improve code quality, and mitigate the communication challenges that arise as team size and project criticality increase.
+
 ### Planning Accuracy
 
+Milestone progress view
+
 ### Bottlenecks
+status column
 
 ### Bus Factor
+Bar chart : Items by milestone and assignees
 
 
 
