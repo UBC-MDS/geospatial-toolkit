@@ -4,5 +4,7 @@ channels:
 dependencies:
   - python
   - ipykernel
+  - nbformat
+  - nbclient
   - pip:
     - quartodoc
