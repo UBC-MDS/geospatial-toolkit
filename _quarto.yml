@@ -30,6 +30,8 @@ website:
         href: reference/index.qmd
       - text: "Tutorial"
         href: vignettes/tutorial.qmd
+      - text: "Retrospective"
+        href: retrospective.qmd
 
 
 format:

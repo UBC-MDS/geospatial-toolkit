@@ -41,8 +41,14 @@ from geospatial_toolkit.calc_antipode import get_antipode
 from geospatial_toolkit.latlong import standardize_latlong
 from geospatial_toolkit.point_to_city import point_to_city
 
+try:
+    from geospatial_toolkit._version import __version__
+except ImportError:
+    __version__ = "unknown"
+
 # This defines what is available when someone does 'from geospatial_toolkit import *'
 __all__ = [
+    "__version__",
     "haversine_distance",
     "get_antipode",
     "standardize_latlong",
