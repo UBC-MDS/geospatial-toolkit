@@ -11,7 +11,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Addressed the following Peer/TA Feedback:
 
-- <add_feedback_here>
+
+- Feedback : Add how to cite section (maybe in contributing? please look up other matured repos) (Norton's review)
+- Updated : Added cite section to the README file and added contents. 
+
+- Feedback : Add link to documentation website (Norton's review)
+- Update: Added the link as instructed. 
+
+- Feedback : Add a small data frame in demo (Mara's review)
+- Update : Added, verified and test the data frame along with the functions in demo.
+
+- Feedback : Update latlong function demo (Based on Limor and Mara's reviews) 
+- Update : Updated, added dataframes, tested and verified the contents.
+
+- Feedback : Align Python versions across workflows - Different workflows use different Python versions (3.10 vs 3.11 vs 3.13) in CI, docs, and release workflows. (Limor's review, also good to keep things consistent) 
+- Update : Changed the versioning to semantic, so automatically updates the versions. 
 
 ### Added
 
