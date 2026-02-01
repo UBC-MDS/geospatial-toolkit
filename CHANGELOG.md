@@ -189,6 +189,9 @@ Addressed the following Peer/TA Feedback:
 ### Changed
 
 - Updated `README.md` with function descriptions and attributions
+
+### Removed
+
 - Removed `example.py` placeholder script
 
 ---
