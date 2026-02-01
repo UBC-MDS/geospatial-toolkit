@@ -1,0 +1,86 @@
+---
+title: "Geospatial Toolkit Tutorial"
+format: 
+  html:
+    code-fold: false
+---
+
+## Introduction
+
+The `geospatial_toolkit` is designed to simplify common geographic data tasks, such as cleaning coordinate strings, calculating distances, and finding antipodes. This tutorial demonstrates a typical workflow using the package.
+
+## Installation
+
+To install the package from TestPyPI, run:
+
+``` bash
+pip install -i https://test.pypi.org/simple/ geospatial-toolkit
+```
+
+## Basic Usage
+
+First, let's import the necessary functions:
+
+``` {python}
+from geospatial_toolkit import (
+    standardize_latlong,
+    haversine_distance,
+    get_antipode,
+    point_to_city
+)
+```
+
+**1. Cleaning Coordinates**
+
+Often, geospatial data comes in messy string formats. We can use standardize_latlong to convert these into float tuples.
+
+``` {python}
+lat, lon = standardize_latlong("49.2827", "123.1207")
+print(f"Cleaned Coordinates: {lat}, {lon}")
+```
+
+**2. Calculating Distance**
+
+Now, let's find the distance between our cleaned Vancouver point and the Eiffel Tower in Paris (48.8584, 2.2945).
+
+``` {python}
+paris = (48.8584, 2.2945)
+vancouver = (lat, lon)
+
+distance = haversine_distance(vancouver, paris, unit='km')
+print(f"Distance to Paris: {distance:.2f} km")
+```
+
+
+**3. Finding the Antipode**
+
+What is directly on the opposite side of the world from our Vancouver point?
+
+``` {python}
+anti_lat, anti_lon = get_antipode((lat, lon))
+print(f"Antipode Coordinates: {anti_lat}, {anti_lon}")
+```
+
+
+**4. Identifying the Nearest City**
+
+Finally, let's see if there is a major city near that antipode point in the ocean.
+
+``` {python}
+import pandas as pd
+from shapely.geometry import Polygon
+
+data = {
+    'city_name': ['Vancouver', 'Port-aux-Français'],
+    'geometry': [
+        Polygon([(-124, 48), (-122, 48), (-122, 50), (-124, 50)]), 
+        Polygon([(69, -50), (71, -50), (71, -48), (69, -48)])
+    ]
+}
+cities_df = pd.DataFrame(data)
+
+city_info = point_to_city(49.2827, -123.1207, cities_df)
+
+print(f"Nearest City to Antipode: {city_info}")
+```
+

@@ -36,77 +36,110 @@ Among the four main functions in Geospatial Toolkit, some overlap with existing 
 
 ## Get started
 
-You can install this package into your preferred Python environment using pip:
+### Installation
+
+You can install the latest version of the package from [TestPyPI](https://test.pypi.org/):
 
 ```bash
-pip install geospatial_toolkit
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ geospatial-toolkit
 ```
 
-To use geospatial-toolkit in your code:
+To use geospatial-toolkit in your code, start a Python session:
+
+```bash
+python
+```
+
+Then run:
 
 ```python
 import geospatial_toolkit as gst
 import pandas as pd
+from shapely.geometry import Polygon
 
-# Standardize latitude and longitude
-gst.standardize_latlong("34°3'8\"N", "118°14'37\"W")
+# 1. Standardize latitude and longitude
+# 'd' stands for degree
+gst.standardize_latlong('34d3\'8"N', '118d14\'37"W')
 
-# Calculate Haversine distance between two points
+# 2. Calculate Great-Circle distance
 point_a = (49.2827, -123.1207) # Vancouver
 point_b = (45.5017, -73.5673)  # Montreal
 gst.haversine_distance(point_a, point_b)
 
-# Get antipode of a location
-gst.get_antipode("Vancouver, BC")
+# 3. Get the antipode of a location
+gst.get_antipode((49.2827, -123.1207))
 
-# Find which city contains a given point
-gst.point_to_city(49.2827, -123.1207, cities_df=pd.DataFrame(...))
+# 4. Find which city contains a given point (using a reference DataFrame)
+data = {
+    'city_name': ['Vancouver', 'Port-aux-Français'],
+    'geometry': [
+        Polygon([(-124, 48), (-122, 48), (-122, 50), (-124, 50)]), 
+        Polygon([(69, -50), (71, -50), (71, -48), (69, -48)])
+    ]
+}
+cities_df = pd.DataFrame(data)
+
+gst.point_to_city(49.2827, -123.1207, cities_df)
+```
+
+To exit the Python session:
+
+```python
+exit()
 ```
 
 ## Development Environment
+
+### Prerequisites
+
+- Python 3.11 or higher
+- [Conda](https://docs.conda.io/en/latest/miniconda.html) or Mamba package manager
 
 To set up the development environment, navigate to your local folder of choice and follow the instructions below
 
 1. Clone the repository:
 
 Using HTTPS:
+
 ```bash
 git clone https://github.com/UBC-MDS/geospatial-toolkit.git
 ```
 
 Or, using SSH:
+
 ```bash
 git clone git@github.com:UBC-MDS/geospatial-toolkit.git
 ```
 
 Navigate to the project root:
+
 ```bash
 cd geospatial-toolkit
 ```
 
-2. Create project Conda environment:
+Create and activate the project Conda environment:
+
 ```bash
 conda env create -f environment.yml
-```
-
-3. Activate the Conda environment:
-```bash
 conda activate geospatial
 ```
 
-4. Install the package in editable mode
+Install the package in editable mode
+
 ```bash
 pip install -e .
 ```
 
-5. (Recommended) Install development dependencies
+(Recommended) Install development dependencies
 
 This project uses optional dependency groups for development, testing, documentation, and packaging.
 
 Install all development-related dependencies with:
+
 ```bash
 pip install -e ".[all]"
 ```
+
 Alternatively, you can install specific groups:
 
 ```bash
@@ -119,44 +152,60 @@ pip install -e ".[docs]"
 
 To run the full test suite, ensure the development environment is activated and the package is installed in editable mode with testing dependencies.
 
-In terminal, from the project root directory, run: 
+In terminal, from the project root directory, run:
+
 ```bash
 pytest
 ```
 
 To run tests with coverage, run:
+
 ```bash
 pytest --cov=geospatial_toolkit
 ```
 
 ## Building Documentation
 
+This project uses quartodoc and Quarto to generate its documentation.
+
+Note on Dependencies: Building the documentation requires `nbformat` to execute Python code blocks. This is included in the `environment.yml` file.
+
 Ensure the development environment is activated and the package is installed in editable mode with documentation dependencies:
 
 ```bash
 pip install -e ".[docs]"
 ```
+
 Generate the API reference:
+
 ```bash
 quartodoc build
 ```
+
 Preview the site locally:
+
 ```bash
 quarto preview
 ```
 
 ## Contributors
+
 - Athul Sasidharan
 - Prabuddha Tamhane
 - Shrabanti Bala Joya
 - Shreya Kakachery
+
+## How to cite
+
+If you use this package in coursework, reports, or research, please cite the GitHub repository:
+
+Geospatial Toolkit contributors. (2026). *geospatial_toolkit* (Version 3.0.0) [Software]. GitHub. https://github.com/UBC-MDS/geospatial-toolkit
 
 ## Copyright
 
 - Copyright © 2026 Athul, Bala, Prabuddha, Shreya.
 - Free software distributed under the [MIT License](./LICENSE).
 
-## Atribution
+## Attribution
 
-Gen AI tools were used to assist in the creation of this package, including code generation and documentation drafting. All generated content was reviewed and edited by the human authors to ensure accuracy and quality.
-
+Gen AI tools (Google Gemini, OpenAI ChatGPT, and GitHub Copilot) were used to assist in the creation of this package, including code generation and documentation drafting. All generated content was reviewed and edited by the human authors to ensure accuracy and quality.
