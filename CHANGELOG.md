@@ -7,10 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0] - (2026-02-02)
 
+### Added
+- Added a full user installation guide and expanded README setup instructions. (PR #102)
+- Added “How to cite” guidance in the README. (PR #96)
+- Added contributor names/emails to `pyproject.toml`. (PR #96)
+- Added a contributors section to `CONDUCT.md`. (PR #96)
+- Added retrospective documentation content (charts/metrics + sections). (PR #92)
+- Added `hatch-vcs` for dynamic versioning from Git tags. (PR #76)
+- Added Netlify deployment for PR preview builds. (PR #78)
+
+### Changed
+- Updated README examples and formatting, including fixing escape characters in the `standardize_latlong` example. (PR #102)
+- Updated installation link / TestPyPI install instructions in README. (PR #102)
+- Added/clarified the `d` notation in latitude/longitude instructions and demo notes. (PR #94, PR #102)
+- Updated harassment reporting email in the Code of Conduct. (PR #96)
+
+### Removed
+- Removed `.github/dependabot.yml`. (PR #91)
+
+### Fixed
+- Fixed TOML/dependency issues that were causing docs/build workflow failures. (PR #97)
+
 ### Peer Review Feedback
 
 Addressed the following Peer/TA Feedback:
-
 
 - Feedback : Add how to cite section (maybe in contributing? please look up other matured repos) (Norton's review)
 - Updated : Added cite section to the README file and added contents. 
